@@ -1,0 +1,120 @@
+.s-icon{
+    background-size: contain !important;
+}
+
+.gs-icon{
+    background: url('@/assets/icons/icon-non-gia-su-day-kem.png') no-repeat;
+}
+
+.teacher-icon{
+    background: url('@/assets/icons/Teaching.png') no-repeat;
+}
+
+.dev-kid-icon{
+    background: url('@/assets/icons/Dev_kid.png') no-repeat;
+}
+
+.dev-icon{
+    background: url('@/assets/icons/Dev.png') no-repeat;
+}
+
+.ielts-icon{
+    background: url('@/assets/icons/Graduation_het.png') no-repeat;
+
+}
+
+.learn-icon{
+    background: url('@/assets/icons/Learning.webp') no-repeat;
+}
+
+.scratch-icon{
+    background: url('@/assets/icons/scratch_dev.png') no-repeat;
+}
+
+.game-dev-icon{
+    background: url('@/assets/icons/game_dev.png') no-repeat;
+}
+
+.app-dev-icon{
+    background: url('@/assets/icons/app_dev.png') no-repeat;
+}
+
+.web-dev-icon{
+    background: url('@/assets/icons/web_dev.png') no-repeat;
+}
+
+.python-dev-icon{
+    background: url('@/assets/icons/python_dev.webp') no-repeat;
+}
+
+.robotic-icon{
+    background: url('@/assets/icons/robotic_dev.png') no-repeat;
+}
+
+.html-icon{
+    background: url('@/assets/icons/html-icon.png') no-repeat;
+}
+
+.css-icon{
+    background: url('@/assets/icons/css-icon.png') no-repeat;
+}
+
+.js-icon{
+    background: url('@/assets/icons/js-icon.png') no-repeat;
+}
+
+.vuejs-icon{
+    background: url('@/assets/icons/vue-icon.png') no-repeat;
+}
+
+.reactjs-icon{
+    background: url('@/assets/icons/react-icon.png') no-repeat;
+}
+
+.angular-icon{
+    background: url('@/assets/icons/angular-icon.png') no-repeat;
+}
+
+.api-icon{
+    background: url('@/assets/icons/api-icon.png') no-repeat;
+}
+
+.restful-icon{
+    background: url('@/assets/icons/restful-icon.png') no-repeat;
+}
+
+.postman-icon{
+    background: url('@/assets/icons/postman-icon.svg') no-repeat;
+}
+
+.oop-icon{
+    background: url('@/assets/icons/oop-icon.png') no-repeat;
+}
+
+.cs-icon{
+    background: url('@/assets/icons/cs-logo.svg') no-repeat;
+}
+
+.java-icon{
+    background: url('@/assets/icons/java-logo.webp') no-repeat;
+}
+
+.node-icon{
+    background: url('@/assets/icons/node-icon.png') no-repeat;
+}
+
+.sql-icon{
+    background: url('@/assets/icons/sql-icon.png') no-repeat;
+}
+
+.mysql-icon{
+    background: url('@/assets/icons/mysq-icon.png') no-repeat;
+}
+
+.postgre-icon{
+    background: url('@/assets/icons/postgre-icon.png') no-repeat;
+}
+
+.mongo-icon{
+    background: url('@/assets/icons/mongo-icon.png') no-repeat;
+}

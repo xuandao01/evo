@@ -1,0 +1,120 @@
+@import url('@/css/icon.css');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Opensans;
+}
+
+@font-face {
+    font-family: Opensans;
+    src: url('@/assets/fonts/Open_Sans/static/OpenSans/OpenSans-Regular.ttf');
+}
+
+@font-face {
+    font-family: Opensans-semibold;
+    src: url('@/assets/fonts/Open_Sans/static/OpenSans/OpenSans-SemiBold.ttf');
+}
+
+@font-face {
+    font-family: Opensans-bold;
+    src: url('@/assets/fonts/Open_Sans/static/OpenSans/OpenSans-Bold.ttf');
+}
+
+.semibold{
+    font-family: opensans-semibold;
+}
+
+.bold{
+    font-family: opensans-bold;
+}
+
+.lh-16{
+    line-height: 16px;
+}
+
+.lh-22{
+    line-height: 22px;
+}
+
+.lh-28{
+    line-height: 28px;
+}
+
+.lh-36{
+    line-height: 36px;
+}
+
+.lh-44{
+    line-height: 44px;
+}
+
+.flex{
+    display: flex;
+}
+
+.c-gap-10{
+    column-gap: 10px;
+}
+
+.f-left{
+    float: left;
+}
+
+.color-3 {
+    color: #373737;
+}
+
+.color-5 {
+    color: #575757;
+}
+
+.color-1 {
+    color: #111111;
+}
+
+.color-f{
+    color: #fff;
+}
+
+.color-b{
+    color: #00a4df;
+}
+
+.err-text{
+    color: red;
+    font-size: 14px;
+    margin-left: 4px;
+}
+
+.err-field{
+    border-color: red !important;
+}
+
+.top-10{
+    margin-top: 10px;
+}
+
+.top-15{
+    margin-top: 15px;
+}
+
+.top-20{
+    margin-top: 20px;
+}
+
+.top-30{
+    margin-top: 30px;
+}
+
+.f-12{
+    font-size: 12px;
+}
+
+.f-14{
+    font-size: 14px;
+}
+
+
+.f-18{
+    font-size: 18px;
+}
