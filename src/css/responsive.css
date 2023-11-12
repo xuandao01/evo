@@ -4,3 +4,135 @@
         margin: 0 auto;
     }
 }
+
+@media(max-width: 767px){
+    .e-container{
+        width: 700px;
+        margin: 0 auto;
+    }
+
+    .s-main{
+        flex-direction: column;
+        row-gap: 24px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .s-main_leftside{
+        
+    }
+
+    .s-main_rightside{
+        height: 300px;
+    }
+    .section1{
+        height: 950px !important;
+    }
+    .impressive-item .title{
+        text-align: center;
+    }
+
+    .s-sec2-content{
+        grid-template-columns: auto auto !important;
+        width: 90% !important;
+        height: 950px !important;
+    }
+
+    .section2{
+        height: 1800px !important;
+    }
+
+    .cc-item-footer{
+        column-gap: 20px !important;
+
+    }
+    .s3-p2-container{
+        flex-direction: column !important;
+        align-items: center;
+    }
+
+    .section3{
+        height: 3000px !important;
+    }
+
+    .s3-p2-item{
+        width: 300px !important;
+    }
+
+    .see-more-btn__s3{
+        left: 105px !important;
+    }
+
+    .section4 .e-container{
+        flex-direction: column;
+    }
+    
+    .section4{
+        height: 900px !important;
+    }
+
+    .section5 .e-container{
+        flex-direction: column-reverse;
+        row-gap: 50px;
+    }
+
+    .s5-right-side > div{
+        max-width: 450px;
+    }
+
+    .section5 .s5-left-side{
+        width: 500px !important;
+        margin-left: 12%;
+    }
+
+    .section5 {
+        height: 900px !important;
+    }
+
+    .f-copyright{
+        position: absolute;
+        bottom: 10px;
+    }
+}
+
+@media(max-width: 480px){
+    .e-container{
+        width: 300px;
+    }
+
+    .section1{
+        height: 1200px !important;
+    }
+
+    .section1 .s-main_title{
+        font-size: 36px;
+    }
+
+    .section1 .see-more-btn{
+        width: 100%;
+    }
+
+    .section1 .s-main_rightside{
+        height: 180px;
+    }
+
+    .section1 .s-impressive{
+        font-size: 24px;
+    }
+
+    .section1 .s-impressive-main{
+        flex-direction: column;
+        row-gap: 10px;
+    }
+
+    .s-sec2-content{
+        grid-template-columns: auto !important;
+        left: 0 !important;
+        margin-left: 0 !important;
+        height: 1900px !important;
+    }
+
+    .section2{
+        height: 3000px !important;
+    }
+}

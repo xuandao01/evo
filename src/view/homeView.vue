@@ -97,7 +97,7 @@
             </div>
             <div class="e-container">
                 <div class="s3-title section-title bold">Học lập trình cho người lớn tại <span class="bold color-b">EVO Education</span></div>
-                <div class="flex" style="margin-top: 50px; justify-content: space-evenly;">
+                <div class="flex s3-p2-container" style="margin-top: 50px; justify-content: space-evenly;">
                     <div class="s3-p2-item">
                         <div class="s3-p2-item__header">
                             <div class="s3-p2-item__title bold color-f">Front-End</div>
