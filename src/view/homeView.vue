@@ -5,9 +5,9 @@
                 <div class="s-main">
                     <div class="s-main_leftside">
                         <div class="s-main_title bold">EVO Education</div>
-                        <div class="s-main_subtitle semibold">Nền tảng học tập hàng đầu Việt Nam</div>
-                        <div class="s-main_content semibold lh-28">Nền tảng học tập EVO Education cải thiện và nâng cao học lực của bạn với nhiều loại hình giảng dạy kết hợp với công nghệ thu thập và xử lý dữ liệu theo từng buổi học.</div>
-                        <button class="see-more-btn semibold">Tìm hiểu thêm</button>
+                        <div class="s-main_subtitle semibold">Hệ thống giáo dục đa nền tảng hàng đầu Việt Nam</div>
+                        <div class="s-main_content semibold lh-28">Nền tảng giáo dục EVO Education cung cấp đa dạng các khóa học hỗ trợ học sinh thông qua các lớp học online và offline. Với sứ mệnh giúp thế hệ trẻ phát triển kiến thức và kỹ năng cần thiết để thành công trong tương lai.</div>
+                        <button class="see-more-btn semibold" @click="scrollToForm">Tìm hiểu thêm</button>
                     </div>
                     <div class="s-main_rightside"></div>
                 </div>
@@ -87,8 +87,8 @@
                                 <div class="cc-content-item" v-for="(content, inx) in item.content" :key="inx">{{ content }}</div>
                             </div>
                             <div class="cc-item-footer">
-                                <div class="bold" style="color: rgba(56, 56, 255, 0.844);">Tìm hiểu thêm 🔎</div>
-                                <div class="bold" style="color: rgb(78, 78, 78);">Đăng ký học thử 🚀</div>
+                                <div @click="scrollToForm" class="bold" style="color: rgba(56, 56, 255, 0.844);">Tìm hiểu thêm 🔎</div>
+                                <div @click="scrollToForm" class="bold" style="color: rgb(78, 78, 78);">Đăng ký học thử 🚀</div>
                             </div>
                         </div>
                     </el-carousel-item>
@@ -112,7 +112,7 @@
                             <div class="semibold">🟠 Level 3: <span>JS nâng cao, xây dựng website hoàn chỉnh.</span></div>
                             <div class="semibold">🔴 Level 4: <span>JS framework: Vue, React, Angular</span></div>
                         </div>
-                        <button class="see-more-btn__s3 semibold">Đăng ký học</button>
+                        <button @click="scrollToForm" class="see-more-btn__s3 semibold">Đăng ký học</button>
                     </div>
                     <div class="s3-p2-item">
                         <div class="s3-p2-item__header">
@@ -128,7 +128,7 @@
                             <div class="semibold">🟠 Level 3: <span>Nguyên lý Rest và kiến trúc Restful</span></div>
                             <div class="semibold">🔴 Level 4: <span>Test và tìm kiếm lỗi API</span></div>
                         </div>
-                        <button class="see-more-btn__s3 semibold">Đăng ký học</button>
+                        <button @click="scrollToForm" class="see-more-btn__s3 semibold">Đăng ký học</button>
                     </div>
                     <div class="s3-p2-item">
                         <div class="s3-p2-item__header">
@@ -144,7 +144,7 @@
                             <div class="semibold">🟠 Level 3: <span>Sử dụng những kiến trúc dữ liệu phổ biến</span></div>
                             <div class="semibold">🔴 Level 4: <span>Viết unit test và triển khai hệ thống</span></div>
                         </div>
-                        <button class="see-more-btn__s3 semibold">Đăng ký học</button>
+                        <button @click="scrollToForm" class="see-more-btn__s3 semibold">Đăng ký học</button>
 
                     </div>
                     <div class="s3-p2-item">
@@ -161,7 +161,7 @@
                             <div class="semibold">🟠 Level 3: <span>Sử dụng function và procedure</span></div>
                             <div class="semibold">🔴 Level 4: <span>Sử dụng view và trigger</span></div>
                         </div>
-                        <button class="see-more-btn__s3 semibold">Đăng ký học</button>
+                        <button @click="scrollToForm" class="see-more-btn__s3 semibold">Đăng ký học</button>
 
                     </div>
                 </div>
@@ -175,40 +175,288 @@
                     <div style="margin-top: 30px;">
                         <div class="semibold color-5 lh-44" style="font-size: 17px; " v-for="(item, index) in homeRes[lang].section4Content" :key="index"> {{ item }}</div>
                     </div>
-                    <div class="bold" style="cursor: pointer; padding: 10px 20px; border-radius: 8px; margin-top: 20px; color: #fff; max-width: 150px; text-align: center; background-color: #0297ce;">Đăng ký học thử</div>
+                    <div @click="scrollToForm" class="bold" style="cursor: pointer; padding: 10px 20px; border-radius: 8px; margin-top: 20px; color: #fff; max-width: 150px; text-align: center; background-color: #0297ce;">Đăng ký học thử</div>
                 </div>
                 <div class="s4-right-side"></div>
             </div>
         </div>
 
-        <div class="section5">
+        <div class="section5" ref="submitForm" >
             <div class="e-container flex c-gap-10">
                 <div class="s5-left-side"></div>
-                <div class="s5-right-side">
+                <div class="s5-right-side" v-if="showSubmitForm">
                     <div class="bold color-1" style="font-size: 32px; position: relative; left: 100px;">Học trải nghiệm <span class="bold color-b"> miễn phí </span></div>
                     <div class="leave-inf-area" style="display: flex; flex-direction: column;">
-                        <div><input @blur="inpOnBlur('name')" placeholder="Họ tên"></div>
-                        <div><input @blur="inpOnBlur('phoneNumber')" placeholder="Số điện thoại"></div>
-                        <div><input @blur="inpOnBlur('address')" placeholder="Địa chỉ (optional)"></div>
-                        <div><input @blur="inpOnBlur('subject')" placeholder="Môn học quan tâm (optional)"></div>
-                        <button class="semibold">Đăng ký ngay</button>
+                        <div><input ref="inpFullname" v-model="fullName" @blur="inpOnBlur('name')" placeholder="Họ tên học viên (Nguyễn Văn A)"></div>
+                        <div><input ref="inpPhonenumber" v-model="phoneNumber" @blur="inpOnBlur('phoneNumber')" placeholder="Số điện thoại (0975123222)"></div>
+                        <div><input ref="inpAge" type="number" v-model="age" @blur="inpOnBlur('age')" placeholder="Độ tuổi (8)"></div>
+                        <div><input v-model="address" @blur="inpOnBlur('address')" placeholder="Địa chỉ (Cầu Giấy - Hà Nội)"></div>
+                        <div class="e-subject">
+                            <el-tree-select
+                                class="e-subject-tree"
+                                v-model="subjectValue"
+                                :data="courseData"
+                                :render-after-expand="false"
+                                multiple
+                                show-checkbox
+                                @select="courseOnSelect"
+                            />
+                        </div>
+                        <button class="semibold" @click="submit">Đăng ký ngay</button>
+                    </div>
+                </div>
+
+                <div class="s5-right-side-result" v-else>
+                    <el-result
+                        icon="success"
+                        title="Đăng ký thành công"
+                        sub-title="Chúng tôi sẽ liên hệ với bạn trong thời gian sớm nhất"
+                    ></el-result>
+                    <div class="turn-back w-100">
+                        <button class="semibold common-btn" @click="backToSubmit">Quay lại form đăng ký</button>
                     </div>
                 </div>
             </div>
         </div>
+        <loader v-show="isLoading"></loader>
+        <div @click="scrollToForm" class="e-trial-fixed">
+        </div>
 
+        <el-dialog v-model="centerDialogVisible" :title="dialogTitle" width="30%" center>
+            <span>
+            {{ this.dialogMessage }}
+            </span>
+            <template #footer>
+            <span class="dialog-footer">
+                <el-button type="primary" @click="centerDialogVisible = false">
+                    Đồng ý
+                </el-button>
+            </span>
+            </template>
+        </el-dialog>
     </div>
 </template>
 <script>
 import homeRes from '@/resources/home.js'
+import loader from '@/components/loader.vue'
 export default {
     name: 'homeView',
+    components: {loader},
     data(){
         return{
             homeRes: homeRes,
             lang: 'vi',
             isErrName: false,
             isErrPN: false,
+            fullName: '',
+            phoneNumber: '',
+            address: '',
+            subject: '',
+            age: '',
+            isLoading: false,
+            showSubmitForm: true,
+            subjectValue: null,
+            centerDialogVisible: false,
+            dialogTitle: '',
+            dialogMessage: '',
+            courseData: [
+                {
+                    value: '1',
+                    label: 'Lập trình cho trẻ em',
+                    children: [
+                    {
+                        value: '1-1',
+                        label: 'Lập trình Scratch',
+                        children: [
+                        {
+                            value: '1-1-1',
+                            label: 'Lập trình Scratch Basic',
+                        },
+                        {
+                            value: '1-1-2',
+                            label: 'Lập trình Scratch Advance',
+                        },
+                        {
+                            value: '1-1-3',
+                            label: 'Lập trình Scratch Intensive',
+                        },
+                        ],
+                    },
+                    {
+                        value: '1-2',
+                        label: 'Lập trình Game',
+                        children: [
+                        {
+                            value: '1-2-1',
+                            label: 'Lập trình Game Basic',
+                        },
+                        {
+                            value: '1-2-2',
+                            label: 'Lập trình Game Advance',
+                        },
+                        {
+                            value: '1-2-3',
+                            label: 'Lập trình Game Intensive',
+                        },
+                        ],
+                    },
+                    {
+                        value: '1-3',
+                        label: 'Lập trình Web',
+                        children: [
+                        {
+                            value: '1-3-1',
+                            label: 'Lập trình Web Basic',
+                        },
+                        {
+                            value: '1-3-2',
+                            label: 'Lập trình Web Advance',
+                        },
+                        {
+                            value: '1-3-3',
+                            label: 'Lập trình Web Intensive',
+                        },
+                        ],
+                    },
+                    {
+                        value: '1-4',
+                        label: 'Lập trình Python cơ bản',
+                    }
+                    ],
+                },
+                {
+                    value: '2',
+                    label: 'Lập trình cho người lớn',
+                    children: [
+                    {
+                        value: '2-1',
+                        label: 'Lập trình front-end',
+                        children: [
+                        {
+                            value: '2-1-1',
+                            label: 'HTML/CSS Cơ bản',
+                        },
+                        {
+                            value: '2-1-2',
+                            label: 'HTML/CSS Nâng cao',
+                        },
+                        {
+                            value: '2-1-3',
+                            label: 'Framework JS Vue-React-Angular',
+                        },
+                        ],
+                    },
+                    {
+                        value: '2-2',
+                        label: 'Lập trình back-end',
+                    },
+                    {
+                        value: '2-2',
+                        label: 'Restful API',
+                    },
+                    {
+                        value: '2-2',
+                        label: 'Cơ sở dữ liệu',
+                    },
+                    ],
+                },
+                {
+                    value: '3',
+                    label: 'Chương trình theo bộ giáo dục',
+                    children: [
+                    {
+                        value: '3-1',
+                        label: 'Toán học',
+                        children: [
+                        {
+                            value: '3-1-0',
+                            label: 'Lớp 1-5',
+                        },
+                        {
+                            value: '3-1-1',
+                            label: 'Lớp 6-9',
+                        },
+                        {
+                            value: '3-1-2',
+                            label: 'Lớp 10-12',
+                        },
+                        ],
+                    },
+                    {
+                        value: '3-2',
+                        label: 'Vật lý',
+                        children: [
+                        {
+                            value: '3-2-0',
+                            label: 'Lớp 1-5',
+                        },
+                        {
+                            value: '3-2-1',
+                            label: 'Lớp 6-9',
+                        },
+                        {
+                            value: '3-2-2',
+                            label: 'Lớp 10-12',
+                        },
+                        ],
+                    },
+                    {
+                        value: '3-3',
+                        label: 'Hóa học',
+                        children: [
+                        {
+                            value: '3-3-0',
+                            label: 'Lớp 1-5',
+                        },
+                        {
+                            value: '3-3-1',
+                            label: 'Lớp 6-9',
+                        },
+                        {
+                            value: '3-3-2',
+                            label: 'Lớp 10-12',
+                        },
+                        ],
+                    },
+                    {
+                        value: '3-4',
+                        label: 'Văn học',
+                        children: [
+                        {
+                            value: '3-4-0',
+                            label: 'Lớp 1-5',
+                        },
+                        {
+                            value: '3-4-1',
+                            label: 'Lớp 6-9',
+                        },
+                        {
+                            value: '3-4-2',
+                            label: 'Lớp 10-12',
+                        },
+                        ],
+                    },
+                    {
+                        value: '3-5',
+                        label: 'Tiếng Anh',
+                        children: [
+                        {
+                            value: '3-5-0',
+                            label: 'Lớp 1-5',
+                        },
+                        {
+                            value: '3-5-1',
+                            label: 'Lớp 6-9',
+                        },
+                        {
+                            value: '3-5-2',
+                            label: 'Lớp 10-12',
+                        },
+                        ],
+                    },
+                    ],
+                },
+                ]
         }
     },
     created(){
@@ -219,9 +467,60 @@ export default {
         this.setCounting('countExp', 3, false);
         this.setCounting('countBase', 12, false);
         this.setCounting('countTeacher', 25, true);
+        this.processWhenMounted();
+    },
+
+    watch:{
+
     },
 
     methods: {
+
+        showDialog(title, message){
+            this.dialogTitle = title;
+            this.dialogMessage = message;
+            this.centerDialogVisible = true;
+        },
+
+        processWhenMounted(){
+            document.querySelector('.e-subject-tree .el-input__inner').placeholder = 'Môn học quan tâm';
+        },
+
+        backToSubmit(){
+            this.showSubmitForm = true;
+        },
+
+        async submit(){
+            if (this.vaildate()) {
+                this.isLoading = true;
+                let api = this.homeRes.sheetAPI + `?fullname=${this.fullName}&phone_number=${this.phoneNumber}&address=${this.address}&subject=${this.subjectValue}&age=${this.age}`,
+                    res = await fetch(api),
+                    json = await res.json();
+                this.isLoading = false;
+                
+                if (json.result == 'success') {
+                    this.showSubmitForm = false;
+                }
+            }
+        },
+
+        vaildate(){
+            if (!this.fullName) {
+                this.showDialog('Đăng ký không thành công', 'Họ và tên không được để trống!');
+                this.$refs.inpFullname.focus();
+                return false;
+            } else if (!this.phoneNumber) {
+                this.showDialog('Đăng ký không thành công', 'Số điện thoại không được để trống!')
+                this.$refs.inpPhonenumber.focus();
+                return false;
+            } else if (!this.subjectValue || this.subjectValue.length == 0) {
+                this.showDialog('Đăng ký không thành công', 'Bạn phải chọn ít nhất 1 môn học!')
+                document.querySelector('.e-subject-tree .el-input__inner').focus();
+                return false;
+            }
+            return true;
+        },
+
         setCounting(id, countTo, havePlus){
             let counts = setInterval(updated, 3000/countTo);
             let upto = 0;
@@ -244,7 +543,7 @@ export default {
             if (!event.target.value) {
                 switch(field) {
                     case 'name': {
-                        name = 'Họ và tên';
+                        name = 'Họ tên học viên';
                         if (this.isErrName) isPrintText = false;
                         break;
                     }
@@ -258,6 +557,7 @@ export default {
                     let errText = document.createElement('div');
                     errText.classList.add('err-text');
                     errText.textContent = `${name} không được bỏ trống.`;
+                    errText.style.marginLeft = '50px';
                     event.target.parentElement.append(errText);
                     event.target.classList.add('err-field');
                 }
@@ -283,19 +583,93 @@ export default {
                         break;
                     }
                 }
-                event.target.parentElement.querySelector('.err-text').remove();
+                if (event.target.parentElement.querySelector('.err-text')) {
+                    event.target.parentElement.querySelector('.err-text').remove();
+                }
                 event.target.classList.remove('err-field');
             }
+        },
+
+        scrollToForm(){
+            this.$refs.submitForm.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
         }
     },
 }
 </script>
 <style>
 
+    .el-input--suffix{
+        width: 100%;
+        height: 72px;
+        border: unset;
+        outline: unset;
+    }
+
+    .e-subject-tree{
+        width: 100%;
+    }
+
+    .e-subject-tree .el-input__wrapper{
+        border-radius: 10px;
+    }
+
+    .e-subject{
+        width: 126%;
+        height: 72px;
+        border: solid #666666 1px;
+        margin-top: 20px;
+        margin-left: 50px;
+        border-radius: 10px;
+        background-color: #fff;
+    }
+
+    .e-trial-fixed:hover{
+        cursor: pointer;
+        opacity: 1;
+    }
+
+    .e-trial-fixed{
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        border-radius: 20px;
+        opacity: .4;
+        z-index: 95;
+        height: 120px;
+        width: 120px;
+        background: url('@/assets/icons/trial-icon.png') no-repeat;
+        background-size: cover;
+    }
+
+    .s5-right-side-result{
+        flex: 1;
+    }
+
+    .s5-right-side-result .el-result{
+        width: 100%;
+        height: 70%;
+        margin: 0 auto;
+    }
+
+    .common-btn{
+        height: 44px;
+        position: relative;
+        left: 31%;
+        top: 20px;
+        border: unset;
+        outline: unset;
+        border-radius: 12px;
+        background-color: #00afef;
+        color: #fff;
+        font-size: 18px;
+        cursor: pointer;
+        padding: 10px 20px;
+    }
+
     .leave-inf-area > button{
         height: 44px;
         position: relative;
-        left: 120px;
+        left: 110px;
         top: 20px;
         border: unset;
         outline: unset;
@@ -307,14 +681,15 @@ export default {
     }
 
     .leave-inf-area > div > input{
-        height: 44px;
+        height: 36px;
         border-radius: 12px;
         border: solid #666666 1px;
-        width: 150%;
+        width: 120%;
         position: relative;
         left: 0px;
         margin-top: 20px;
         padding: 0 12px;
+        margin-left: 50px;
         outline: unset;
     }
 
@@ -327,7 +702,6 @@ export default {
         background-color: #00afef10;
         padding-top: 100px;
         position: relative;
-        top: 60px;
     }
 
     .section5 .s5-left-side{
@@ -349,6 +723,10 @@ export default {
         position: relative;
         left: 60px;
         top: 40px;
+        cursor: pointer;
+    }
+
+    .s3-p2-item > button:hover {
         cursor: pointer;
     }
 
@@ -456,7 +834,6 @@ export default {
         height: 500px;
         background-color: #bb7d0006;
         position: relative;
-        top: 60px;
     }
 
     .cc-item-footer{
@@ -514,15 +891,18 @@ export default {
     }
 
     .el-carousel__item:nth-child(3n) {
-        background-color: #ffdb94;
+        background-image: linear-gradient(74deg, #fff0d2, #ffdb94);
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     }
 
     .el-carousel__item:nth-child(3n + 1) {
-        background-color: #c3efff;
+        background-image: linear-gradient(74deg, #d7e6ff, #a3c5ff);
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     }
 
     .el-carousel__item:nth-child(3n + 2) {
-        background-color: #ffc3c3;
+        background-image: linear-gradient(74deg, #ffe4e4, #ffc3c3);
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     }
 
     .section-title{
@@ -536,7 +916,6 @@ export default {
         background-color: #00afef10;
         height: 1400px;
         position: relative;
-        top: 60px;
         padding-top: 20px;
     }
 
@@ -544,7 +923,6 @@ export default {
         height: 1520px;
         background-color: #bb7d0006;
         position: relative;
-        top: 60px;
         padding-top: 10px;
     }
 
@@ -651,20 +1029,13 @@ export default {
     }
 
     .section1{
-        top: 60px;
         position: relative;
-        padding-top: 50px;
-        height: 550px;
+        padding-top: 100px;
+        height: 600px;
         background-color: #00afef10;
         background-image: url('@/assets/image/section1_bg_2.png');
         background-repeat: no-repeat;
         background-size: cover;
-    }
-    @media(min-width: 1250px){
-        .e-container{
-            width: 1200px;
-            margin: 0 auto;
-        }
     }
 
     .s-main{
@@ -705,7 +1076,7 @@ export default {
     }
 
     .s-main_rightside{
-        background: url('@/assets/image/banner.jpg') no-repeat;
+        background: url('@/assets/image/section1_img.png') no-repeat;
         background-size: cover !important;
     }
 

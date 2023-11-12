@@ -12,7 +12,6 @@
                                     ref="treeRef"
                                     class="filter-tree"
                                     :data="homeRes[lang]['courseChild']"
-                                    default-expand-all
                                 />
                             </div>
                         </div>
@@ -38,6 +37,7 @@
             <button class="h-btn1 semibold">{{ homeRes[lang]['menuButton'].action1.name }}</button>
             <button class="h-btn2 semibold">{{ homeRes[lang]['menuButton'].action2.name }}</button>
         </div>
+
     </div>
 </template>
 <script>
@@ -52,7 +52,11 @@ export default {
     },
     created(){
         this.lang = sessionStorage.lang;
-    }
+    },
+
+    methods: {
+
+    },
 }
 </script>
 <style scoped>
@@ -61,6 +65,8 @@ export default {
             column-gap: 28px !important;
         }
     }
+
+    
     .r-courses:hover .filter-tree{
         display: block;
     }

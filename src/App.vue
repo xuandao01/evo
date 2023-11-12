@@ -26,7 +26,7 @@ export default {
     }
 
     if (!this.$route.fullPath.replaceAll('/', '')) {
-      this.$router.push('/home');
+      this.$router.push('/');
     }
   },
 }

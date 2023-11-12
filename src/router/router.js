@@ -1,10 +1,19 @@
 import {createRouter, createWebHistory} from 'vue-router';
 import homeView from '@/view/homeView.vue'
+import courseView from '@/view/courseView.vue'
 
 const routers = [
     {
-        path: '/home',
+        path: '/',
         component: homeView
+    },
+    {
+        path: '/courses',
+        component: courseView
+    },
+    {
+        path: "/:catchAll(.*)", // Unrecognized path automatically matches 404
+        redirect: '/',
     }
 ]
 

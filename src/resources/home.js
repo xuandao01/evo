@@ -3,7 +3,7 @@ const res = {
         menubar: [
             {
                 name: 'Trang chủ',
-                router: 'home'
+                router: ''
             },
             {
                 name: 'Khóa học',
@@ -60,19 +60,37 @@ const res = {
                 },
                 {
                   id: 5,
-                  label: 'Lập trình Game Maker',
+                  label: 'Lập trình Game',
                   children: [
                     {
                       id: 12,
-                      label: 'Lập trình Game Maker Basic',
+                      label: 'Lập trình Game Basic',
                     },
                     {
                       id: 13,
-                      label: 'Lập trình Game Maker Advanced',
+                      label: 'Lập trình Game Advanced',
                     },
                     {
                       id: 14,
-                      label: 'Lập trình Game Maker Intensive',
+                      label: 'Lập trình Game Intensive',
+                    },
+                  ],
+                },
+                {
+                  id: 51,
+                  label: 'Lập trình App',
+                  children: [
+                    {
+                      id: 52,
+                      label: 'Lập trình App Basic',
+                    },
+                    {
+                      id: 53,
+                      label: 'Lập trình App Advanced',
+                    },
+                    {
+                      id: 54,
+                      label: 'Lập trình App Intensive',
                     },
                   ],
                 },
@@ -143,7 +161,7 @@ const res = {
           {
             logo: 'teacher-icon',
             title: 'Lớp Học Với Giáo Viên',
-            content: ['Học bổ trợ các môn học theo chương trình Bộ GD với các thầy cô top 1%'],
+            content: ['Học bổ trợ các môn học theo chương trình Bộ GD với giáo trình được xây dựng bởi các thầy cô hàng đầu'],
             action: 'Xem chi tiết'
           },
           {
@@ -160,14 +178,14 @@ const res = {
           },
           {
             logo: 'ielts-icon',
-            title: 'Học IELTS Với GV Bản Ngữ',
+            title: 'Học và luyện thi IELTS',
             content: ['Giúp học sinh từ mất gốc tiếng Anh đạt đến 8.0 IELTS với lộ trình tinh gọn 4 cấp độ.'],
             action: 'Xem chi tiết'
           },
           {
             logo: 'learn-icon',
             title: 'Học Luyện Thi',
-            content: ['Đánh giá năng lực', 'Luyện thi vào lớp 10', 'Luyện thi đại học'],
+            content: ['Luyện thi vào lớp 10', 'Luyện thi đại học'],
             action: 'Xem chi tiết'
           },
         ],
@@ -222,7 +240,9 @@ const res = {
     },
     en: {
 
-    }
+    },
+
+    sheetAPI: 'https://script.google.com/macros/s/AKfycbwjkgyNCM22StD8sUM2d55FT7kqTn1ZrXyN8cMJHhDqSIZfSLh4cOdSlTGf-uarH9KT/exec'
 }
 
 export default res;

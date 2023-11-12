@@ -118,3 +118,57 @@
 .mongo-icon{
     background: url('@/assets/icons/mongo-icon.png') no-repeat;
 }
+
+.scratch-basic, .scratch-advanced, .scratch-intensive{
+    background: url('@/assets/image/scratch-basic.webp') no-repeat;
+}
+
+.game-basic, .game-advanced, .game-intensive {
+    background: url('@/assets/image/game-basic.jpg') no-repeat;
+
+}
+
+.web-basic, .web-advanced, .web-intensive {
+    background: url('@/assets/image/web-basic.jpg') no-repeat;
+
+}
+
+.python-basic, .python-advanced, .python-intensive {
+    background: url('@/assets/image/python-basic.jpg') no-repeat;
+
+}
+
+.html-css {
+    background: url('@/assets/image/HTML-CSS-Basic.png') no-repeat;
+}
+
+.html-css-advanced {
+    background: url('@/assets/image/js-advanced.jpg') no-repeat;
+}
+
+.vue-basic, .vue-advanced {
+    background: url('@/assets/image/vuejs.jpg') no-repeat;
+}
+
+.java-oop {
+    background: url('@/assets/image/java-oop.jpg') no-repeat;
+}
+
+.sql-course {
+    background: url('@/assets/image/SQL-advanced.jpg') no-repeat;
+}
+
+.csharp-course {
+    background: url('@/assets/image/rest-api-csharp.jpg') no-repeat;
+}
+
+.grid-view-icon{
+    background: url('@/assets/icons/grid.png') no-repeat;
+    transform: scale(1.1);
+}
+
+.list-view-icon{
+    background: url('@/assets/icons/list.png') no-repeat;
+    margin-top: 1px;
+}
+
