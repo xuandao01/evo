@@ -38,81 +38,81 @@ const res = {
         courseChild: [
             {
               id: 1,
-              label: 'Lập trình cho trẻ em',
-              children: [
-                {
-                  id: 4,
-                  label: 'Lập trình Scratch',
-                  children: [
-                    {
-                      id: 9,
-                      label: 'Lập trình Scratch Basic',
-                    },
-                    {
-                      id: 10,
-                      label: 'Lập trình Scratch Advanced',
-                    },
-                    {
-                      id: 11,
-                      label: 'Lập trình Scratch Intensive',
-                    },
-                  ],
-                },
-                {
-                  id: 5,
-                  label: 'Lập trình Game',
-                  children: [
-                    {
-                      id: 12,
-                      label: 'Lập trình Game Basic',
-                    },
-                    {
-                      id: 13,
-                      label: 'Lập trình Game Advanced',
-                    },
-                    {
-                      id: 14,
-                      label: 'Lập trình Game Intensive',
-                    },
-                  ],
-                },
-                {
-                  id: 51,
-                  label: 'Lập trình App',
-                  children: [
-                    {
-                      id: 52,
-                      label: 'Lập trình App Basic',
-                    },
-                    {
-                      id: 53,
-                      label: 'Lập trình App Advanced',
-                    },
-                    {
-                      id: 54,
-                      label: 'Lập trình App Intensive',
-                    },
-                  ],
-                },
-                {
-                  id: 6,
-                  label: 'Lập trình Web',
-                  children: [
-                    {
-                      id: 12,
-                      label: 'Lập trình Web Basic',
-                    },
-                    {
-                      id: 13,
-                      label: 'Lập trình Web Advanced',
-                    },
-                    {
-                      id: 14,
-                      label: 'Lập trình Web Intensive',
-                    },
-                  ],
-                },
-              ],
+              label: 'Lập trình cho trẻ em từ 6 - 17 tuổi',
+              // children: [
+              //   {
+              //     id: 4,
+              //     label: 'Lập trình Scratch',
+              //     children: [
+              //       {
+              //         id: 9,
+              //         label: 'Lập trình Scratch Basic',
+              //       },
+              //       {
+              //         id: 10,
+              //         label: 'Lập trình Scratch Advanced',
+              //       },
+              //       {
+              //         id: 11,
+              //         label: 'Lập trình Scratch Intensive',
+              //       },
+              //     ],
+              //   },
+              //   {
+              //     id: 5,
+              //     label: 'Lập trình Game',
+              //     children: [
+              //       {
+              //         id: 12,
+              //         label: 'Lập trình Game Basic',
+              //       },
+              //       {
+              //         id: 13,
+              //         label: 'Lập trình Game Advanced',
+              //       },
+              //       {
+              //         id: 14,
+              //         label: 'Lập trình Game Intensive',
+              //       },
+              //     ],
+              //   },
+              //   {
+              //     id: 51,
+              //     label: 'Lập trình App',
+              //     children: [
+              //       {
+              //         id: 52,
+              //         label: 'Lập trình App Basic',
+              //       },
+              //       {
+              //         id: 53,
+              //         label: 'Lập trình App Advanced',
+              //       },
+              //       {
+              //         id: 54,
+              //         label: 'Lập trình App Intensive',
+              //       },
+              //     ],
+              //   },
+              //   {
+              //     id: 6,
+              //     label: 'Lập trình Web',
+              //     children: [
+              //       {
+              //         id: 12,
+              //         label: 'Lập trình Web Basic',
+              //       },
+              //       {
+              //         id: 13,
+              //         label: 'Lập trình Web Advanced',
+              //       },
+              //       {
+              //         id: 14,
+              //         label: 'Lập trình Web Intensive',
+              //       },
+              //     ],
+              //   },
+              // ],
             },
             {
               id: 2,

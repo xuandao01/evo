@@ -3,9 +3,15 @@
         width: 1200px;
         margin: 0 auto;
     }
+
+    .mobile-mode{
+        display: none;
+    }
 }
 
 @media(max-width: 767px){
+
+
     .e-container{
         width: 700px;
         margin: 0 auto;
@@ -133,6 +139,107 @@
     }
 
     .section2{
-        height: 3000px !important;
+        height: 2300px !important;
+    }
+
+    .section2 .section2-part2{
+        display: none;
+    }
+
+    .pc-mode{
+        display: none;
+    }
+    
+    .el-carousel__container{
+        height: 360px !important;
+    }
+
+    .cc-item-footer{
+        font-size: 14px !important;
+    }
+    .el-carousel--horizontal{
+        height: 420px;
+        margin-top: 20px;
+    }
+
+    .section3{
+        height: 3200px !important;
+    }
+
+    .section4{
+        height: 1050px !important;
+    }
+    
+    .s4-right-side{
+        height: 200px !important;
+        width: 300px !important;
+    }
+
+    .s5-right-side div {
+        left: 0 !important;
+    }
+
+    .s5-right-side input{
+        max-width: 300px !important;
+        margin-left: 0 !important;
+    }
+    .e-subject{
+        width: 324px !important;
+        margin-left: 0 !important;
+    }
+
+    .leave-inf-area > button{
+        left: 12px !important;
+    }
+
+    .section5 .s5-left-side{
+        width: 290px !important;
+        height: 180px !important;
+        margin-left: 4%;
+    }
+
+    .section5{
+        height: 760px !important;
+    }
+
+    .s-footer{
+        height: 1245px !important;
+    }
+
+    .main-content{
+        display: block !important;
+    }
+
+    .main-content-item:nth-child(3) {
+        height: 60% !important;
+    }
+
+    .e-trial-fixed{
+        height: 75px !important;
+        width: 75px !important;
+    }
+
+    .s3-p2-item__header{
+        width: calc(100% - 40px) !important;
+    }
+}
+
+@media(max-width: 360px){
+    .s5-right-side input{
+        max-width: 270px !important;
+        margin-left: 0 !important;
+    }
+    .e-subject{
+        width: 294px !important;
+        margin-left: 0 !important;
+    }
+    .leave-inf-area > button{
+        left: 0px !important;
+    }
+
+    .section5 .s5-left-side{
+        width: 290px !important;
+        height: 180px !important;
+        margin-left: 1%;
     }
 }

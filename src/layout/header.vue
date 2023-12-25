@@ -12,6 +12,7 @@
                                     ref="treeRef"
                                     class="filter-tree"
                                     :data="homeRes[lang]['courseChild']"
+                                    @node-click="courseSelected"
                                 />
                             </div>
                         </div>
@@ -55,7 +56,18 @@ export default {
     },
 
     methods: {
-
+        courseSelected(node) {
+            if (node.id) {
+                switch(node.id){
+                    case 1: {
+                        this.$router.push('course-kid');
+                        console.log(this.$router);
+                        break;
+                    }
+                    
+                }
+            }
+        }
     },
 }
 </script>

@@ -156,6 +156,7 @@ export default {
 
     .footer-item:hover{
         color: #111111;
+        cursor: not-allowed;
     }
 
     .s-footer{

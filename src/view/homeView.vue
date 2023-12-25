@@ -47,28 +47,29 @@
                         <div class="s-item-action semibold">{{ item.action }}</div>
                     </div>
                 </div>
-
-                <div class="s-title bold">Chương trình theo <span class="s-title s-title-evo bold">Bộ Giáo Dục</span> </div>
-                <div class="s-subtitle" style="font-size: 18px; max-width: 550px; margin: 0 auto; margin-top: 12px;">EVO Education biên soạn bài giảng bám sát với chương trình của Bộ Giáo Dục, giúp học viên đạt thành tích học tập cao nhất.</div>
-                <div class="s-sec2-content2" style=" border-radius: 12px; max-width: 640px; padding: 30px; margin: 0 auto; box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px; margin-top: 40px; height: 200px; background-color: #fff;" >
-                    <div class="sec2-item flex" style="align-items: center;">
-                        <div class="sec2-item-title semibold color-3">Tiểu học: </div>
-                        <div class="sec2-subitem-group flex c-gap-10" style="margin-left: 20px;">
-                            <div class="sec2-subitem item-primary-school" v-for="(item, index) in 5" :key="index">{{ 'Lớp ' + (index + 1) }}</div>
+                <div class="section2-part2">
+                    <div class="s-title bold">Chương trình theo <span class="s-title s-title-evo bold">Bộ Giáo Dục</span> </div>
+                    <div class="s-subtitle" style="font-size: 18px; max-width: 550px; margin: 0 auto; margin-top: 12px;">EVO Education biên soạn bài giảng bám sát với chương trình của Bộ Giáo Dục, giúp học viên đạt thành tích học tập cao nhất.</div>
+                    <div class="s-sec2-content2" style=" border-radius: 12px; max-width: 640px; padding: 30px; margin: 0 auto; box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px; margin-top: 40px; height: 200px; background-color: #fff;" >
+                        <div class="sec2-item flex" style="align-items: center;">
+                            <div class="sec2-item-title semibold color-3">Tiểu học: </div>
+                            <div class="sec2-subitem-group flex c-gap-10" style="margin-left: 20px;">
+                                <div class="sec2-subitem item-primary-school" v-for="(item, index) in 5" :key="index">{{ 'Lớp ' + (index + 1) }}</div>
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="sec2-item flex" style="align-items: center; margin-top: 12px;">
-                        <div class="sec2-item-title semibold color-3">THCS: </div>
-                        <div class="sec2-subitem-group flex c-gap-10" style="margin-left: 44px;">
-                            <div class="sec2-subitem item-secondary-school" v-for="(item, index) in 4" :key="index">{{ 'Lớp ' + (index + 6) }}</div>
+    
+                        <div class="sec2-item flex" style="align-items: center; margin-top: 12px;">
+                            <div class="sec2-item-title semibold color-3">THCS: </div>
+                            <div class="sec2-subitem-group flex c-gap-10" style="margin-left: 44px;">
+                                <div class="sec2-subitem item-secondary-school" v-for="(item, index) in 4" :key="index">{{ 'Lớp ' + (index + 6) }}</div>
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="sec2-item flex" style="align-items: center; margin-top: 12px;">
-                        <div class="sec2-item-title semibold color-3">THPT: </div>
-                        <div class="sec2-subitem-group flex c-gap-10" style="margin-left: 44px;">
-                            <div class="sec2-subitem item-hight-school" v-for="(item, index) in 3" :key="index">{{ 'Lớp ' + (index + 10) }}</div>
+    
+                        <div class="sec2-item flex" style="align-items: center; margin-top: 12px;">
+                            <div class="sec2-item-title semibold color-3">THPT: </div>
+                            <div class="sec2-subitem-group flex c-gap-10" style="margin-left: 44px;">
+                                <div class="sec2-subitem item-hight-school" v-for="(item, index) in 3" :key="index">{{ 'Lớp ' + (index + 10) }}</div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -78,7 +79,22 @@
         <div class="section3">
             <div class="e-container">
                 <div class="s3-title section-title bold">Trẻ em học lập trình tại <span class="bold color-b">EVO Education</span></div>
-                <el-carousel class="course-carosel" :interval="5000" type="card" height="300px">
+                <el-carousel class="course-carosel pc-mode" :interval="5000" type="card" height="300px">
+                    <el-carousel-item class="course-carousel-item" v-for="(item, index) in homeRes[lang].courseCarousel" :key="index">
+                        <div class="cc-header">
+                            <div class="cc-logo s-icon" :class="item.logo"></div>
+                            <div class="cc-title bold color-3 ">{{ item.title }}</div>
+                            <div class="cc-content">
+                                <div class="cc-content-item" v-for="(content, inx) in item.content" :key="inx">{{ content }}</div>
+                            </div>
+                            <div class="cc-item-footer">
+                                <div @click="scrollToForm" class="bold" style="color: rgba(56, 56, 255, 0.844);">Tìm hiểu thêm 🔎</div>
+                                <div @click="scrollToForm" class="bold" style="color: rgb(78, 78, 78);">Đăng ký học thử 🚀</div>
+                            </div>
+                        </div>
+                    </el-carousel-item>
+                </el-carousel>
+                <el-carousel class="mobile-mode">
                     <el-carousel-item class="course-carousel-item" v-for="(item, index) in homeRes[lang].courseCarousel" :key="index">
                         <div class="cc-header">
                             <div class="cc-logo s-icon" :class="item.logo"></div>
@@ -199,7 +215,6 @@
                                 :render-after-expand="false"
                                 multiple
                                 show-checkbox
-                                @select="courseOnSelect"
                             />
                         </div>
                         <button class="semibold" @click="submit">Đăng ký ngay</button>
@@ -258,6 +273,7 @@ export default {
             subjectValue: null,
             centerDialogVisible: false,
             dialogTitle: '',
+            isCounted: false,
             dialogMessage: '',
             courseData: [
                 {
@@ -463,10 +479,13 @@ export default {
         if (sessionStorage.lang) this.lang = sessionStorage.lang;
     },
     mounted(){
-        this.setCounting('countStudent', 900, true);
-        this.setCounting('countExp', 3, false);
-        this.setCounting('countBase', 12, false);
-        this.setCounting('countTeacher', 25, true);
+        if (!this.isCounted) {
+            this.setCounting('countStudent', 900, true);
+            this.setCounting('countExp', 3, false);
+            this.setCounting('countBase', 12, false);
+            this.setCounting('countTeacher', 25, true);
+            this.isCounted = true;
+        }
         this.processWhenMounted();
     },
 
@@ -490,10 +509,18 @@ export default {
             this.showSubmitForm = true;
         },
 
+        // convertIDToSubject(arr) {
+        //     let result = '';
+        //     if (arr && arr.length > 0) {
+        //         /*eslint-disable no-debugger */
+        //         debugger
+        //     }
+        // },
+
         async submit(){
             if (this.vaildate()) {
                 this.isLoading = true;
-                let api = this.homeRes.sheetAPI + `?fullname=${this.fullName}&phone_number=${this.phoneNumber}&address=${this.address}&subject=${this.subjectValue}&age=${this.age}`,
+                let api = this.homeRes.sheetAPI + `?fullname=${this.fullName}&phone_number=${this.phoneNumber}&address=${this.address}&subject=${this.subjectValue}&age=${this.age}&submited_at=${new Date()}`,
                     res = await fetch(api),
                     json = await res.json();
                 this.isLoading = false;
@@ -526,10 +553,11 @@ export default {
             let upto = 0;
             function updated() {
                 let count = document.getElementById(id);
-                if (!havePlus) {
+                if (!havePlus && count) {
                     count.innerHTML = ++upto;
                 } else {
-                    count.innerHTML = ++upto + '+';
+                    if (count)
+                        count.innerHTML = ++upto + '+';
                 }
                 if (upto === countTo) {
                     clearInterval(counts);

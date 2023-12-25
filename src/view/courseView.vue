@@ -66,6 +66,7 @@
                 </div>
             </div>
         </div>
+        <ELoader v-if="showLoader"></ELoader>
     </div>
 </template>
 <script>
@@ -82,11 +83,15 @@ export default {
             courseData: null,
             ageRangeList: [],
             currentTechCourseSelectedCategory: 0,
-            viewType: ViewType.gridView
+            viewType: ViewType.gridView,
+            showLoader: true,
         }
     },
     created(){
         this.courseData = courseRes.vi.techCourse;
+        setTimeout(() => {
+            this.showLoader = false;
+        }, 1500);
     },
 
     mounted(){

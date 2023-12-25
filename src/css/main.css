@@ -140,4 +140,9 @@
     width: 100%;
 }
 
+.required-field{
+    font-family: Notosan-bold;
+    color: rgb(223, 29, 29);
+}
+
 
