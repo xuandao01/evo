@@ -9,6 +9,8 @@ const app = createApp(App);
 app.use(router);
 app.use(ElementPlus);
 app.component('ELoader', loader);
+// let cors = require("cors");
+// app.use(cors());
 
 router.isReady().then(()=> {
   app.mount("#app")

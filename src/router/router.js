@@ -3,6 +3,7 @@ import homeView from '@/view/homeView.vue'
 import courseView from '@/view/courseView.vue'
 import codeKidView from '@/view/codeKidView.vue'
 import courseKidView from '@/view/courseKidView.vue'
+import aiQuestView from '@/view/aiQuestView.vue'
 
 const routers = [
     {
@@ -20,6 +21,10 @@ const routers = [
     {
         path: '/code-kid',
         component: codeKidView
+    },
+    {
+        path: '/ai',
+        component: aiQuestView
     },
     {
         path: "/:catchAll(.*)", // Unrecognized path automatically matches 404

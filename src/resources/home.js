@@ -14,17 +14,21 @@ const res = {
                 router: 'lecturers'
             },
             {
-                name: 'Học thử miễn phí',
+                name: 'Sự kiện',
                 router: 'trial'
             },
             {
-                name: 'Liên hệ',
-                router: 'contact'
+                name: 'Tin tức',
+                router: 'news'
             },
             {
-                name: 'Giới thiệu',
+                name: 'Về chúng tôi',
                 router: 'introduce'
-            }
+            },
+            {
+              name: 'Hỏi đáp AI',
+              router: 'ai'
+          }
         ],
 
         menuButton: {

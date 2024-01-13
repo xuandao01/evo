@@ -1,7 +1,7 @@
 <template>
     <div class="ev-header">
         <div class="header-left">
-            <div class="h-logo"></div>
+            <div class="h-logo" @click="() => {$router.push('/')}"></div>
             <div class="header-content">
                 <div class="h-container">
                     <div class="h-menu-item" v-for="(item, index) in homeRes[lang]['menubar']" :key="index">
@@ -106,6 +106,7 @@ export default {
         width: 140px;
         background: url('@/assets/image/logo.png') no-repeat;
         background-size: contain;
+        cursor: pointer;
     }
 
     .header-left{

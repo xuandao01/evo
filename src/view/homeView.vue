@@ -5,8 +5,8 @@
                 <div class="s-main">
                     <div class="s-main_leftside">
                         <div class="s-main_title bold">EVO Education</div>
-                        <div class="s-main_subtitle semibold">Hệ thống giáo dục đa nền tảng hàng đầu Việt Nam</div>
-                        <div class="s-main_content semibold lh-28">Nền tảng giáo dục EVO Education cung cấp đa dạng các khóa học hỗ trợ học sinh thông qua các lớp học online và offline. Với sứ mệnh giúp thế hệ trẻ phát triển kiến thức và kỹ năng cần thiết để thành công trong tương lai.</div>
+                        <div class="s-main_subtitle semibold">Hệ Thống Giáo Dục Phát Triển Toàn Diện Cho Trẻ</div>
+                        <div class="s-main_content semibold lh-28">Tại EVO Education, chúng tôi không chỉ truyền đạt kiến thức, chúng tôi tạo ra cơ hội để con bạn khám phá sâu hơn về khoa học và công nghệ. Với sứ mệnh giúp thế hệ trẻ phát triển toàn diện, khai phá tiềm năng của bản thân và xây dựng nền tảng vững chắc cho tương lai. Chúng tôi tin rằng mỗi đứa trẻ đều là một "nhà nghiên cứu" và "nhà phát triển" đầy tiềm năng.</div>
                         <button class="see-more-btn semibold" @click="scrollToForm">Tìm hiểu thêm</button>
                     </div>
                     <div class="s-main_rightside"></div>
@@ -19,11 +19,11 @@
                     </div>
                     <div class="impressive-item">
                         <div class="number bold" id="countStudent">0</div>
-                        <div class="title semibold">Học viên được đào tạo bài bản</div>
+                        <div class="title semibold">Học viên tốt nghiệp có việc làm</div>
                     </div>
                     <div class="impressive-item">
                         <div class="number bold" id="countBase">0</div>
-                        <div class="title semibold">Cơ sở tại Hà Nội</div>
+                        <div class="title semibold">Tổng số cơ sở</div>
                     </div>
                     <div class="impressive-item">
                         <div class="number bold" id="countTeacher">0</div>
@@ -477,13 +477,14 @@ export default {
     },
     created(){
         if (sessionStorage.lang) this.lang = sessionStorage.lang;
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     },
     mounted(){
         if (!this.isCounted) {
-            this.setCounting('countStudent', 900, true);
-            this.setCounting('countExp', 3, false);
-            this.setCounting('countBase', 12, false);
-            this.setCounting('countTeacher', 25, true);
+            this.setCounting('countStudent', 95, '%');
+            this.setCounting('countExp', 5, '');
+            this.setCounting('countBase', 12, '');
+            this.setCounting('countTeacher', 100, '+');
             this.isCounted = true;
         }
         this.processWhenMounted();
@@ -548,16 +549,16 @@ export default {
             return true;
         },
 
-        setCounting(id, countTo, havePlus){
+        setCounting(id, countTo, after){
             let counts = setInterval(updated, 3000/countTo);
             let upto = 0;
             function updated() {
                 let count = document.getElementById(id);
-                if (!havePlus && count) {
+                if (!after && count) {
                     count.innerHTML = ++upto;
                 } else {
                     if (count)
-                        count.innerHTML = ++upto + '+';
+                        count.innerHTML = ++upto + after;
                 }
                 if (upto === countTo) {
                     clearInterval(counts);
@@ -1059,7 +1060,7 @@ export default {
     .section1{
         position: relative;
         padding-top: 100px;
-        height: 600px;
+        height: 670px;
         background-color: #00afef10;
         background-image: url('@/assets/image/section1_bg_2.png');
         background-repeat: no-repeat;
@@ -1097,7 +1098,7 @@ export default {
     .s-main_rightside{
         width: 100%;
         max-width: 575px;
-        max-height: 300px;
+        max-height: 330px;
         background-color: #00afef30;
         border-radius: 12px;
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;

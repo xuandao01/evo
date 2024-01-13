@@ -25,7 +25,7 @@
                         <div class="course-action semibold">Tìm hiểu thêm <span class="e-next">→</span></div>
                     </div>
                 </div>
-                <div class="e-main-title-2 bold f-36">Tại sao nên lựa chọn Evo Education
+                <div class="e-main-title-2 bold f-36">Tại sao nên lựa chọn EVO Education
                     <div class="line-bar"></div>
                 </div>
                 <div class="reason-area">
@@ -92,6 +92,7 @@ export default {
         setTimeout(() => {
             this.showLoader = false;
         }, 1500);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     },
 
     mounted(){
@@ -257,6 +258,7 @@ export default {
         display: flex;
         align-items: center;
         box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        background-color: #fff;
     }
 
     .reason-area .step-bar{
@@ -380,6 +382,7 @@ export default {
         top: 50px;
         border: solid 1px rgba(149, 157, 165, 0.2);
         box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        background-color: #fff;
     }
 
     .e-main-title-3{
@@ -417,6 +420,7 @@ export default {
         position: relative;
         top: 66px;
         height: 2700px;
+        background-color: #00afef10;
     }
    .e-banner-1{
     height: 630px;
