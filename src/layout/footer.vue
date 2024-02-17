@@ -35,8 +35,8 @@
                     <div class="footer-item top-30 f-14">Lập trình Game for Kid</div>
                     <div class="footer-item top-30 f-14">Lập trình App for Kid</div>
                     <div class="footer-item top-30 f-14">Lập trình Web for Kid</div>
-                    <div class="footer-item top-20 f-14">Lập trình cơ bản cho người lớn</div>
-                    <div class="footer-item top-20 f-14">Học 1-1 theo chương trình bộ giáo dục</div>
+                    <div class="footer-item top-20 f-14">Lập trình cho sinh viên và người đi làm</div>
+                    <div class="footer-item top-20 f-14">Luyện thi tin học trẻ 1:1</div>
                 </div>
             </div>
             <div class="f-copyright">© 2023 EVO Education. Đã Đăng Ký Bản Quyền</div>
@@ -93,8 +93,8 @@ export default {
         height: 44px;
         width: 44px;
         position: fixed;
-        bottom: 190px;
-        right: 20px;
+        bottom: 140px;
+        right: 25px;
         background-size: contain !important;
         z-index: 100;
         background: url('@/assets/icons/phone-icon-blue.png');
@@ -102,8 +102,8 @@ export default {
 
     .quick-message{
         height: 44px;
-        bottom: 250px;
-        right: 20px;
+        bottom: 200px;
+        right: 25px;
         position: fixed;
         background-size: contain !important;
         width: 44px;

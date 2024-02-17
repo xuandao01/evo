@@ -3,17 +3,20 @@
         width: 1200px;
         margin: 0 auto;
     }
-
-    .mobile-mode{
-        display: none;
-    }
 }
 
 @media(max-width: 767px){
+    
+    .pc-mode{
+        display: none;
+    }
 
+    .mobile-mode{
+        display: block !important;
+    }
 
     .e-container{
-        width: 700px;
+        width: 100%;
         margin: 0 auto;
     }
 
@@ -32,7 +35,10 @@
         height: 300px;
     }
     .section1{
-        height: 950px !important;
+        height: 1000px !important;
+    }
+    .s2-progress{
+        height: 365px !important;
     }
     .impressive-item .title{
         text-align: center;
@@ -106,8 +112,20 @@
         width: 300px;
     }
 
+    .s2-p2-contaner{
+        flex-direction: column;
+    }
+
+    .s2-progress{
+        height: 180px !important;
+    }
+
+    .section2-main-item .section2-main-item__text{
+        text-align: center;
+    }
+
     .section1{
-        height: 1200px !important;
+        height: 1350px !important;
     }
 
     .section1 .s-main_title{
@@ -143,10 +161,6 @@
     }
 
     .section2 .section2-part2{
-        display: none;
-    }
-
-    .pc-mode{
         display: none;
     }
     

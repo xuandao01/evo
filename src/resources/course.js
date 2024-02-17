@@ -2,7 +2,7 @@ const course = {
     vi: {
         techCourse: [
             {
-                courseName: 'Lập trình scratch cơ bản',
+                courseName: 'Lập trình Scratch cơ bản',
                 ageRange: '1',
                 ageRangeDisplay: 'Dưới 5 tuổi',
                 isEnable: true,
@@ -10,7 +10,7 @@ const course = {
                 educationTime: '2 tháng'
             },
             {
-                courseName: 'Lập trình scratch nâng cao',
+                courseName: 'Lập trình Scratch nâng cao',
                 ageRange: '2',
                 ageRangeDisplay: 'Từ 6-8 tuổi',
                 isEnable: true,
@@ -26,7 +26,7 @@ const course = {
                 educationTime: '2 tháng'
             },
             {
-                courseName: 'Lập trình scratch chuyên sâu',
+                courseName: 'Lập trình Scratch chuyên sâu',
                 ageRange: '3',
                 ageRangeDisplay: 'Từ 8 - 10 tuổi',
                 isEnable: true,

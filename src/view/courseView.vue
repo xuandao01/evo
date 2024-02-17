@@ -146,6 +146,7 @@ export default {
 }
 </script>
 <style scoped>  
+
     .list-view-item__button{
         text-align: center;
         padding: 8px 12px;

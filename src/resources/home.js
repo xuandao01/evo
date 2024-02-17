@@ -7,15 +7,11 @@ const res = {
             },
             {
                 name: 'Khóa học',
-                router: 'courses'
-            },
-            {
-                name: 'Giáo viên',
-                router: 'lecturers'
+                router: 'course-kid'
             },
             {
                 name: 'Sự kiện',
-                router: 'trial'
+                router: 'events'
             },
             {
                 name: 'Tin tức',
@@ -23,7 +19,7 @@ const res = {
             },
             {
                 name: 'Về chúng tôi',
-                router: 'introduce'
+                router: 'abouts'
             },
             {
               name: 'Hỏi đáp AI',
@@ -136,24 +132,6 @@ const res = {
                 },
               ],
             },
-            {
-              id: 3,
-              label: 'Chương trình theo bộ giáo dục',
-              children: [
-                {
-                  id: 15,
-                  label: 'Giáo dục tiểu học',
-                },
-                {
-                  id: 16,
-                  label: 'Giáo dục THCS',
-                },
-                {
-                  id: 17,
-                  label: 'Giáo dục THPT',
-                },
-              ],
-            },
         ],
         courseSection2: [
           {
@@ -197,32 +175,32 @@ const res = {
         courseCarousel: [
           {
             logo: 'scratch-icon',
-            title: 'Lập trình scratch',
+            title: 'Lập trình Scratch',
             content: ['🔥 Khóa học nhằm giúp các em phát triển kỹ năng tư duy logic, sáng tạo, và giải quyết vấn đề thông qua lập trình.', '🔥 Hướng dẫn các em thiết kế và xây dựng các dự án kỹ thuật số độc đáo.'],
           },
           {
             logo: 'game-dev-icon',
-            title: 'Lập trình game',
+            title: 'Lập trình Game 3D',
             content: ['🏹 Khóa học này mục tiêu giúp các em hiểu cách lập trình và xây dựng trò chơi từ đầu đến cuối.', '🏹 Hướng dẫn trẻ em phát triển kỹ năng tư duy logic, sáng tạo và quản lý dự án.'],
           },
           {
             logo: 'app-dev-icon',
-            title: 'Lập trình app',
+            title: 'Lập trình App Mobile',
             content: ['📲 Khóa học này mục tiêu giúp trẻ em hiểu cách hoạt động của các ứng dụng di động và tạo ra các ứng dụng đơn giản.', '📲 Hướng dẫn trẻ em phát triển kỹ năng tư duy logic, sáng tạo và giải quyết vấn đề thông qua việc lập trình ứng dụng.'],
           },
           {
             logo: 'web-dev-icon',
-            title: 'Lập trình web',
+            title: 'Lập trình Website',
             content: ['💻 Giúp trẻ học viên hiểu cách hoạt động của các trang web và tạo ra các trang web đơn giản.', '💻 Hướng dẫn trẻ em phát triển kỹ năng tư duy logic, sáng tạo và giải quyết vấn đề thông qua lập trình web.'],
           },
           {
             logo: 'python-dev-icon',
-            title: 'Lập trình python cơ bản',
+            title: 'Lập trình Python',
             content: ['🔎 Mục tiêu của khóa học này là giúp các em hiểu cách lập trình hoạt động và phát triển kỹ năng cơ bản trong Python', '🔎 Giúp các em hiểu về ngôn ngữ lập trình và quy trình phát triển phần mềm.'],
           },
           {
             logo: 'robotic-icon',
-            title: 'Robotics',
+            title: 'Chế tạo Robot',
             content: ['🔬 Mục tiêu của khóa học này là giúp các em hiểu về lập trình và kiểm soát robot.', '🔬 Giúp các em hiểu về cách hoạt động của robot, các cảm biến và ứng dụng trong thế giới thực.'],
           }
         ],

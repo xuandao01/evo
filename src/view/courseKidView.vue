@@ -1,34 +1,34 @@
 <template>
     <div class="e-course">
         <div class="e-container">
-            <div class="e-banner-1"></div>
+            <div data-aos="zoom-in" class="e-banner-1"></div>
             <div class="e-course-main">
-                <div class="e-main-title bold f-36">Chương trình học
+                <div data-aos="fade-right" class="e-main-title bold f-36">Chương trình học
                     <div class="line-bar"></div>
                 </div>
                 <div class="course-display">
-                    <div class="course-kid-container course-kid-1" @click="$router.push('code-kid')">
+                    <div data-aos="fade-right"  class="course-kid-container course-kid-1" @click="$router.push('code-kid')">
                         <div class="main-image"></div>
                         <div class="course-name semibold">Khóa học lập trình cơ bản cho trẻ em</div>
                         <div class="course-action semibold">Tìm hiểu thêm <span class="e-next">→</span></div>
                     </div>
     
-                    <div class="course-kid-container course-kid-2">
+                    <div data-aos="fade-down"  class="course-kid-container course-kid-2" @click="$router.push('robotic')">
                         <div class="main-image"></div>
-                        <div class="course-name semibold">Khóa học Robotic: Lắp ráp, chế tạo robot</div>
+                        <div class="course-name semibold">Khóa học Robotic: Lắp ráp và chế tạo robot</div>
                         <div class="course-action semibold">Tìm hiểu thêm <span class="e-next">→</span></div>
                     </div>
     
-                    <div class="course-kid-container course-kid-3">
+                    <div data-aos="fade-up"  class="course-kid-container course-kid-3" @click="$router.push('robotic')">
                         <div class="main-image"></div>
-                        <div class="course-name semibold">Khóa học lập trình chuyên sâu cho trẻ em</div>
+                        <div class="course-name semibold">Khóa học Luyện thi: Robotics và Lập trình</div>
                         <div class="course-action semibold">Tìm hiểu thêm <span class="e-next">→</span></div>
                     </div>
                 </div>
-                <div class="e-main-title-2 bold f-36">Tại sao nên lựa chọn EVO Education
+                <div data-aos="fade-right"  class="e-main-title-2 bold f-36">Tại sao nên lựa chọn EVO Education
                     <div class="line-bar"></div>
                 </div>
-                <div class="reason-area">
+                <div data-aos="fade-right"  class="reason-area">
                     <div class="step-bar">
                         <div class="e-step e-first" @mouseover="mouseOverStep(0)" :class="{'e-step-selected': currentStep == 0}">
                             <div class="e-image e-image-1"></div>
@@ -52,16 +52,16 @@
                     </div>
                 </div>
 
-                <div class="e-main-title-3 bold f-36">Các lộ trình khác
+                <div  data-aos="fade-right"  class="e-main-title-3 bold f-36">Các lộ trình khác
                     <div class="line-bar"></div>
                 </div>
                 <div class="other-course-view">
-                    <div class="other-course-item">
+                    <div data-aos="fade-right"  class="other-course-item">
                         <div class="title semibold">
                             Lộ trình học lập trình cho trẻ 6 - 17 tuổi
                         </div>
                     </div>
-                    <div class="other-course-item">
+                    <div data-aos="fade-left"  class="other-course-item">
                         <div class="title semibold">
                             Lộ trình học lập trình cho người đi làm
                         </div>
@@ -73,6 +73,8 @@
     </div>
 </template>
 <script>
+import AOS from 'aos';
+import 'aos/dist/aos.css'
 export default {
     name: 'CourseView',
     data() {
@@ -97,6 +99,9 @@ export default {
 
     mounted(){
         window.setInterval(this.autoIncreaseStep, 5000);
+        AOS.init({
+            duration: 1000,
+        })
     },
 
     methods: {
@@ -112,6 +117,50 @@ export default {
 }
 </script>
 <style scoped> 
+        /* responsive */
+        @media (max-width: 768px) {
+        .e-banner-1 {
+            height: 400px !important;
+            background-repeat: no-repeat !important;
+            background-size: contain !important;
+        }
+        .course-display {
+            flex-direction: column;
+            row-gap: 12px;
+            align-items: center;
+        }
+        .step-bar .e-step .e-image {
+            display: none;
+        }
+        .e-main-title-2 {
+            display: none;
+        }
+
+        .reason-area {
+            display: none;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .e-main-title, .e-main-title-3 {
+            font-size: 30px !important;
+        }
+
+        .e-banner-1 {
+            height: 180px !important;
+        }
+
+        .other-course-view{
+            flex-direction: column;
+            row-gap: 20px;
+            height: 600px !important;
+        }
+
+        .other-course-item {
+            height: 300px !important;
+            width: 300px !important;
+        }
+    }
 
     .other-course-item .title{
         position: absolute;
@@ -213,6 +262,7 @@ export default {
         font-size: 22px;
         max-width: 250px;
         padding-left: 20px;
+        padding-right: 10px;
     }
 
     .step-bar .e-step .e-image-1 {
@@ -393,7 +443,7 @@ export default {
 
     .e-main-title-2{
         position: relative;
-        max-width: 632px;
+        max-width: 650px;
         top: 150px;
     }
 
@@ -425,7 +475,11 @@ export default {
    .e-banner-1{
     height: 630px;
     width: 100%;
-    background-image: url('@/assets/image/BannerKidCourse.png');
+    background-image: url('@/assets/image/BannerNormalKid.png');
     background-size: cover;
+    border-radius: 20px;
+    background-position: 0 -20px;
+    position: relative;
+    top: 20px;
    }
 </style>

@@ -4,13 +4,13 @@
             <div class="e-main">
                 <div class="e-header-distince"></div>
                 <div class="e-banner">
-                    <div class="banner-title bold">Khóa học cho trẻ em từ 6 - 17 tuổi
+                    <div data-aos="fade-right"  class="banner-title bold">Khóa học cho trẻ em từ 6 - 17 tuổi
                         <div class="line-bar"></div>
                     </div>
-                    <div class="banner-imgae"></div>
+                    <div data-aos="zoom-in"  class="banner-imgae"></div>
                 </div>
                 <div class="main-content">
-                    <div class="progress-bar" ref="progressInstance">
+                    <div data-aos="fade-right" class="progress-bar" ref="progressInstance">
                         <div class="progress-title semibold" @click="setActiveProgress(index, true, true)" v-for="(item, index) in progressData" :key="index">{{item.title}}</div>
                     </div>
                     <div class="content">
@@ -111,9 +111,9 @@
                             </div>
                             <div class="study-line">
 
-                                <div class="sl-item">
+                                <div class="sl-item" @click="courseClick('kodu')">
                                     <div class="sl-item-avt sl-kodu-img"></div>
-                                    <div class="sl-item-year semibold">Năm 1</div>
+                                    <div class="sl-item-year semibold">Năm 0</div>
                                     <div class="sl-item-title bold">Kodu Game Lab</div>
                                     <div class="sl-item-group">
                                         <div class="sl-item-age">
@@ -132,7 +132,7 @@
                                     </div>
                                 </div>
 
-                                <div class="sl-item">
+                                <div class="sl-item" @click="courseClick('scratch')">
                                     <div class="sl-item-avt sl-scratch-img"></div>
                                     <div class="sl-item-year semibold">Năm 1</div>
                                     <div class="sl-item-title bold">Lập trình Scatch</div>
@@ -153,10 +153,10 @@
                                     </div>
                                 </div>
 
-                                <div class="sl-item">
+                                <div class="sl-item" @click="courseClick('game')">
                                     <div class="sl-item-avt sl-game-img"></div>
                                     <div class="sl-item-year semibold">Năm 2</div>
-                                    <div class="sl-item-title bold">Lập trình game</div>
+                                    <div class="sl-item-title bold">Lập trình Game</div>
                                     <div class="sl-item-group">
                                         <div class="sl-item-age">
                                             <div class="sl-item-age-title">Độ tuổi phù hợp</div>
@@ -174,10 +174,10 @@
                                     </div>
                                 </div>
 
-                                <div class="sl-item">
+                                <div class="sl-item" @click="courseClick('app')">
                                     <div class="sl-item-avt sl-app-img"></div>
                                     <div class="sl-item-year semibold">Năm 3</div>
-                                    <div class="sl-item-title bold">Lập trình app</div>
+                                    <div class="sl-item-title bold">Lập trình App Mobile</div>
                                     <div class="sl-item-group">
                                         <div class="sl-item-age">
                                             <div class="sl-item-age-title">Độ tuổi phù hợp</div>
@@ -195,10 +195,10 @@
                                     </div>
                                 </div>
 
-                                <div class="sl-item">
+                                <div class="sl-item" @click="courseClick('web')">
                                     <div class="sl-item-avt sl-web-img"></div>
                                     <div class="sl-item-year semibold">Năm 4</div>
-                                    <div class="sl-item-title bold">Lập trình web</div>
+                                    <div class="sl-item-title bold">Lập trình Web</div>
                                     <div class="sl-item-group">
                                         <div class="sl-item-age">
                                             <div class="sl-item-age-title">Độ tuổi phù hợp</div>
@@ -216,10 +216,10 @@
                                     </div>
                                 </div>
 
-                                <div class="sl-item">
+                                <div class="sl-item" @click="courseClick('python')">
                                     <div class="sl-item-avt sl-python-img"></div>
                                     <div class="sl-item-year semibold">Năm 5</div>
-                                    <div class="sl-item-title bold">Lập trình python</div>
+                                    <div class="sl-item-title bold">Lập trình Python</div>
                                     <div class="sl-item-group">
                                         <div class="sl-item-age">
                                             <div class="sl-item-age-title">Độ tuổi phù hợp</div>
@@ -260,24 +260,52 @@
                                 <div class="sp-item"><span class="loader"></span></div>
                             </div>
                         </div>
+                        <div class="submit-remind">
+                            <div class="cr-title bold">Đăng ký học
+                                <div class="line-cr-title"></div>
+                            </div>
+                            <div class="submit-remind-content">
+                                <div class="submit-remind-content__left">
+                                    <div class="semibold">EVO đồng hành cùng con chinh phục thế giới công nghệ</div>
+                                    <div class="semibold">Đăng ký để nhận tư vấn chi tiết</div>
+                                    <button @click="gotoSubmitForm" class="semibold">Nhận tư vấn chi tiết</button>
+                                </div>
+                                <div class="submit-remind-content__right"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
         <ELoader v-if="showLoader"></ELoader>
-        <PopupCourse :subObject="subjectDetail"></PopupCourse>
+        <PopupCourse @closeMe="showPopupSubject = false" @actionPerform="popupAction" v-if="showPopupSubject" :subObject="subjectDetail"></PopupCourse>
+        <el-dialog v-model="centerDialogVisible" :title="dialogTitle" width="30%" center>
+            <span>
+            {{ this.dialogMessage }}
+            </span>
+            <template #footer>
+            <span class="dialog-footer">
+                <el-button type="primary" @click="centerDialogVisible = false">
+                    Đồng ý
+                </el-button>
+            </span>
+            </template>
+        </el-dialog>
     </div>
 </template>
 <script>
 import { ElMessage } from 'element-plus';
 import homeRes from '@/resources/home.js';
 import PopupCourse from '@/components/popupCourse.vue';
+import AOS from 'aos';
+import 'aos/dist/aos.css'
 
 export default {
     name: 'CodeKidView',
     components: {PopupCourse},
     created() {
         let me = this;
+        window.scrollTo({ top: 0, behavior: 'smooth' });
         setTimeout(() => {
             this.showLoader = false;
         }, 1000);
@@ -287,8 +315,109 @@ export default {
     },
     mounted() {
         this.setActiveProgress(0, false);
+        AOS.init({
+            duration: 1000,
+        })
     },
     methods:{
+        gotoSubmitForm() {
+            this.$refs.submitForm.scrollIntoView({ behavior: "smooth", block: "center"});
+        },
+        popupAction(){
+            this.showPopupSubject = false;
+            this.$refs.submitForm.scrollIntoView({ behavior: "smooth", block: "center"});
+        },
+        courseClick(courseName){
+            if (courseName) {
+                switch(courseName) {
+                    case 'kodu': {
+                        this.subjectDetail.title = 'Khóa học lập trình Kodu game lab 3D cho trẻ';
+                        this.subjectDetail.action = 'Đăng ký học thử miễn phí';
+                        this.subjectDetail.studyType = 'Online / Offline kết hợp';
+                        this.subjectDetail.numOfLesson = '15 Buổi Học';
+                        this.subjectDetail.numOfStudent = '5 - 8 học sinh';
+                        this.subjectDetail.content = [
+                            '🥇 Khóa học Kodu Game Lab 3D cho trẻ em là một chương trình học sáng tạo, giúp trẻ phát triển kỹ năng lập trình và tư duy logic thông qua việc tạo ra các trò chơi 3D độc đáo. Với giao diện thân thiện, Kodu Game Lab giúp trẻ dễ dàng hiểu và ứng dụng kiến thức lập trình thông qua việc thiết kế và xây dựng thế giới 3D của riêng mình.',
+
+                            '🥇 Trong khóa học này, các em sẽ được hướng dẫn cách sử dụng công cụ Kodu để tạo ra những trải nghiệm chơi game thú vị và độc đáo. Các em sẽ học cách thiết lập môi trường, tạo nhân vật, xây dựng cấu trúc thế giới, và thậm chí là lập trình các quy tắc để tạo ra các tình huống khác nhau trong trò chơi của mình.',
+
+                            '🥇 Khóa học không chỉ giúp trẻ phát triển kỹ năng lập trình mà còn khuyến khích sự sáng tạo, tư duy logic, và teamwork thông qua việc họ cùng nhau xây dựng và chia sẻ những trò chơi độc đáo của mình. Đây là cơ hội tuyệt vời để trẻ em khám phá thế giới của công nghệ và lập trình một cách sáng tạo và thú vị.']
+                        this.showPopupSubject = true;
+                        break;
+                    }
+                    case 'scratch': {
+                        this.subjectDetail.title = 'Khóa học lập trình Scratch cho trẻ';
+                        this.subjectDetail.action = 'Đăng ký học thử miễn phí';
+                        this.subjectDetail.studyType = 'Online / Offline kết hợp';
+                        this.subjectDetail.numOfLesson = '15 Buổi Học';
+                        this.subjectDetail.numOfStudent = '5 - 8 học sinh';
+                        this.subjectDetail.content = [
+                            '🏆 Khóa học Scratch cho trẻ em là một hành trình sáng tạo, giúp phát triển kỹ năng lập trình một cách dễ dàng và thú vị. Sử dụng môi trường lập trình đồ họa và trực quan, Scratch cho phép trẻ em tạo ra những tác phẩm nghệ thuật số, trò chơi, và câu chuyện theo cách riêng.',
+                            '🏆 Trong khóa học này, trẻ em sẽ khám phá cơ bản của lập trình thông qua việc kéo và thả các khối lệnh đơn giản để tạo ra các hoạt động logic. Các em sẽ học cách tạo nhân vật, điều khiển chúng, và tạo ra các hiệu ứng đồ họa một cách sáng tạo',
+                            '🏆 Khóa học Scratch không chỉ làm cho việc học lập trình trở nên thú vị, mà còn tạo ra cơ hội cho trẻ em tự do sáng tạo và chia sẻ những tác phẩm kỹ thuật số của mình với cộng đồng trực tuyến."'
+                        ]
+                        this.showPopupSubject = true;
+                        break;
+                    }
+                    case 'game': {
+                        this.subjectDetail.title = 'Khóa học lập trình Game cho trẻ';
+                        this.subjectDetail.action = 'Đăng ký học thử miễn phí';
+                        this.subjectDetail.studyType = 'Online / Offline kết hợp';
+                        this.subjectDetail.numOfLesson = '15 Buổi Học';
+                        this.subjectDetail.numOfStudent = '5 - 8 học sinh';
+                        this.subjectDetail.content = [
+                            '🎲 Khóa học Lập trình Game cho trẻ em là một chương trình học thú vị, nhằm giúp trẻ phát triển kỹ năng lập trình thông qua việc tạo ra các trò chơi điện tử. Trong khóa học này, trẻ sẽ học cách sử dụng ngôn ngữ lập trình đơn giản để tạo nhân vật, thiết kế cảnh quan, và xây dựng các thử thách trong trò chơi của mình.',
+                            '🎲 Không chỉ giúp trẻ làm quen với các khái niệm cơ bản về lập trình, khóa học còn khuyến khích sự sáng tạo bằng cách cho phép trẻ tự do thiết kế và thực hiện ý tưởng của mình trong thế giới game. Việc học lập trình thông qua game không chỉ làm cho quá trình học trở nên thú vị mà còn phát triển kỹ năng tư duy logic, giải quyết vấn đề, và teamwork.',
+                            '🎲 Với khóa học này, các em sẽ không chỉ trở thành người chơi mà còn là những nhà phát triển game nhí, tạo ra những trải nghiệm sống động và độc đáo theo ý tưởng của chính họ.'
+                        ]
+                        this.showPopupSubject = true;
+                        break;
+                    }
+                    case 'app': {
+                        this.subjectDetail.title = 'Khóa học lập trình App Mobile cho trẻ';
+                        this.subjectDetail.action = 'Đăng ký học thử miễn phí';
+                        this.subjectDetail.studyType = 'Online / Offline kết hợp';
+                        this.subjectDetail.numOfLesson = '15 Buổi Học';
+                        this.subjectDetail.numOfStudent = '5 - 8 học sinh';
+                        this.subjectDetail.content = [
+                            '📲 Khóa học Lập trình Ứng dụng cho trẻ em là một hành trình hấp dẫn, giúp trẻ phát triển kỹ năng lập trình để tạo ra ứng dụng di động đơn giản của riêng mình. Trong khóa học này, trẻ sẽ khám phá quy trình phát triển ứng dụng từ ý tưởng đến hiện thực bằng cách sử dụng các công cụ phát triển thân thiện với đối tượng.',
+                            '📲 Trẻ em sẽ học cách sử dụng môi trường lập trình dành cho di động, tạo giao diện người dùng, và thêm các tính năng cơ bản bằng cách sử dụng ngôn ngữ lập trình đơn giản. Khóa học không chỉ giúp trẻ phát triển kỹ năng kỹ thuật mà còn khuyến khích sự sáng tạo và tư duy logic.',
+                            '📲 Với việc tạo ra ứng dụng đầu tiên của mình, trẻ em sẽ trải qua một trải nghiệm thực tế và có cơ hội hiểu rõ hơn về thế giới lập trình ứng dụng di động, từ việc thiết kế đến triển khai.'
+                        ]
+                        this.showPopupSubject = true;
+                        break;
+                    }
+                    case 'web': {
+                        this.subjectDetail.title = 'Khóa học lập trình Web cho trẻ';
+                        this.subjectDetail.action = 'Đăng ký học thử miễn phí';
+                        this.subjectDetail.studyType = 'Online / Offline kết hợp';
+                        this.subjectDetail.numOfLesson = '15 Buổi Học';
+                        this.subjectDetail.numOfStudent = '5 - 8 học sinh';
+                        this.subjectDetail.content = [
+                            '💻 Khóa học Lập trình Web cho trẻ em là hành trình tuyệt vời để giới thiệu về thế giới lập trình và phát triển web. Trong khóa học này, trẻ sẽ học cách tạo ra trang web đơn giản bằng cách sử dụng ngôn ngữ và công cụ phát triển web phù hợp với khả năng.',
+                            '💻 Các em sẽ tìm hiểu về cấu trúc cơ bản của trang web, làm quen với ngôn ngữ HTML và CSS để thiết kế giao diện. Họ cũng sẽ được giới thiệu với khái niệm cơ bản về lập trình JavaScript để thêm các yếu tố tương tác vào trang web của mình.',
+                            '💻 Khóa học không chỉ cho các em hiểu về quy trình phát triển web mà còn khuyến khích tư duy logic, sự sáng tạo và kỹ năng giải quyết vấn đề. Với việc tạo ra trang web đầu tiên của mình, trẻ em sẽ có cơ hội tự tin và thấy hứng thú với thế giới lập trình web.'
+                        ]
+                        this.showPopupSubject = true;
+                        break;
+                    }
+                    case 'python': {
+                        this.subjectDetail.title = 'Khóa học lập trình Python cho trẻ';
+                        this.subjectDetail.action = 'Đăng ký học thử miễn phí';
+                        this.subjectDetail.studyType = 'Online / Offline kết hợp';
+                        this.subjectDetail.numOfLesson = '15 Buổi Học';
+                        this.subjectDetail.numOfStudent = '5 - 8 học sinh';
+                        this.subjectDetail.content = [
+                            '⌨️ Khóa học Lập trình Python cho trẻ em là một cơ hội tuyệt vời để giới thiệu ngôn ngữ lập trình đơn giản và mạnh mẽ này cho các em. Trong khóa học này, trẻ sẽ học cách sử dụng Python để tạo ra các chương trình đơn giản, từ việc hiển thị thông điệp đến việc tạo ra các trò chơi và ứng dụng nhỏ.',
+                            '⌨️ Khóa học tập trung vào việc làm cho quá trình học lập trình trở nên thú vị và dễ hiểu. Trẻ em sẽ tìm hiểu cú pháp cơ bản của Python, làm quen với các khái niệm lập trình như biến, điều kiện, và vòng lặp. Ngoài ra, họ cũng sẽ có cơ hội ứng dụng kiến thức của mình để tạo ra những dự án nhỏ và sáng tạo.',
+                            '⌨️ Khóa học này không chỉ giúp trẻ em hiểu về lập trình Python mà còn khuyến khích tư duy logic và sự sáng tạo, mở ra một cánh cửa để trẻ phát triển kỹ năng lập trình ứng dụng trong tương lai.'
+                        ]
+                        this.showPopupSubject = true;
+                        break;
+                    }
+                }
+            }
+        },
         setActiveProgress(progressId, scrollToView = true, isClick = false) {
             if (this.$refs.progressInstance) {
                 let listProgressInstance = this.$refs.progressInstance.querySelectorAll(".progress-title");
@@ -334,7 +463,6 @@ export default {
         },
 
         onScroll(){
-            console.log(window.scrollY);
             switch(true) {
                 case window.scrollY < 1600: {
                     this.setActiveProgress(0, false);
@@ -348,47 +476,78 @@ export default {
                     this.setActiveProgress(2, false);
                     break;
                 }
-                case window.scrollY > 3000 && window.scrollY < 3500: {
+                case window.scrollY > 2910 && window.scrollY < 3500: {
                     this.setActiveProgress(3, false);
                     break;
                 }
-                case window.scrollY > 3550 && window.scrollY < 3800: {
+                case window.scrollY > 3510 && window.scrollY < 3800: {
                     this.setActiveProgress(4, false);
                     break;
                 }
-                case window.scrollY > 3850: {
+                case window.scrollY > 3810: {
                     this.setActiveProgress(5, false);
                     break;
                 }
             }
         },  
 
+        validateBeforeSubmit() {
+            if (!this.submitObject.parentName) {
+                this.showDialog('Đăng ký không thành công', 'Họ và tên phụ huynh không được để trống!');
+                return false;
+            } else if (!this.submitObject.phonenumber) {
+                this.showDialog('Đăng ký không thành công', 'Số điện thoại không được để trống!');
+                return false;
+            } else if (!this.submitObject.address) {
+                this.showDialog('Đăng ký không thành công', 'Địa chỉ không được để trống!');
+                return false;
+            } else if (!this.checkValidPhonenumber(this.submitObject.phonenumber)) {
+                this.showDialog('Đăng ký không thành công', 'Số điện thoại không đúng, vui lòng nhập lại!');
+                return false;
+            }
+            return true;
+        },
+
+        checkValidPhonenumber(phoneNumber) {
+            const regexPhoneNumber = /(84|0[3|5|7|8|9])+([0-9]{8})\b/g;
+            return phoneNumber.match(regexPhoneNumber) ? true : false;
+        },
+
+        showDialog(title, message){
+            this.dialogTitle = title;
+            this.dialogMessage = message;
+            this.centerDialogVisible = true;
+        },
+
         async submit(){
-            this.showLoader = true;
-            let api = this.homeRes.sheetAPI + `?fullname=${this.submitObject.parentName + ' - phu huynh hoc sinh: ' + this.submitObject.studentname }&phone_number=${this.submitObject.phonenumber}&address=${this.submitObject.address}&subject=${this.submitObject.subject}&submited_at=${new Date()}`,
-                res = await fetch(api),
-                json = await res.json();
-            this.showLoader = false;
-            if (json.result == 'success') {
-                ElMessage({
-                    message: 'Đăng ký thành công! Chúng tôi sẽ sớm liên hệ với bạn.',
-                    type: 'success',
-                    duration: 6000,
-                })
-                this.submitObject = {
-                    parentName: '',
-                    phonenumber: '',
-                    email: '',
-                    studentname: '',
-                    location: '',
-                    address: '',
-                    subject: ''
+            if (this.validateBeforeSubmit()) {
+                this.showLoader = true;
+                let api = this.homeRes.sheetAPI + `?fullname=${this.submitObject.parentName + ' - phu huynh hoc sinh: ' + this.submitObject.studentname }&phone_number=${this.submitObject.phonenumber}&address=${this.submitObject.address}&subject=${this.submitObject.subject}&submited_at=${new Date()}`,
+                    res = await fetch(api),
+                    json = await res.json();
+                this.showLoader = false;
+                if (json.result == 'success') {
+                    ElMessage({
+                        message: 'Đăng ký thành công! Chúng tôi sẽ sớm liên hệ với bạn.',
+                        type: 'success',
+                        duration: 6000,
+                    })
+                    this.submitObject = {
+                        parentName: '',
+                        phonenumber: '',
+                        email: '',
+                        studentname: '',
+                        location: '',
+                        address: '',
+                        subject: ''
+                    }
                 }
             }
         }
     },
     data() {
         return {
+            showPopupSubject: false,
             progressData: [
                 {
                     title: "Tổng quan"
@@ -409,7 +568,10 @@ export default {
                     title: "Chia sẻ của học viên"
                 }
             ],
-            subjectDetail: null,
+            subjectDetail: {
+                title: 'a',
+                action: 'b'
+            },
             currentProgress: 0,
             showLoader: true,
             submitObject: {
@@ -429,12 +591,56 @@ export default {
                 { color: '#eb4f34', percentage: 100 },
             ],
             homeRes: homeRes,
+            centerDialogVisible: false,
+            dialogTitle: '',
+            dialogMessage: '',
         }
     }
 }
 </script>
 
 <style scoped>
+
+    .submit-remind-content__right{
+        height: 300px;
+        width: 100%;
+        background: url("@/assets/image/s2-p2.jpg") no-repeat;
+        background-size: contain;
+    }
+    .submit-remind-content__left > button {
+        height: 40px;
+        max-width: 250px;
+        background-color: #00afef;
+        color: #fff;
+        border: unset;
+        outline: unset;
+        border-radius: 12px;
+        cursor: pointer;
+        margin-top: 20px;
+    }
+    .submit-remind-content__left > button:hover{
+        background-color: #2ac6ff;
+    }
+    .submit-remind-content__left{
+        display: flex;
+        flex-direction: column;
+        row-gap: 12px;
+    }
+    .submit-remind-content{
+        display: flex;
+        padding: 40px;
+        column-gap: 20px;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        border-radius: 20px;
+        background-color: #fff;
+        align-items: center;
+    }
+    .submit-remind{
+        height: 400px;
+        width: 100%;
+        margin-left: 50px;
+        margin-top: 100px;
+    }
 
     .e-code-kid{
         background-color: #00afef10;
@@ -522,42 +728,42 @@ export default {
     .sl-item-avt {
         position: absolute;
         height: 60px;
-        width: 60px;
-        border-radius: 50%;
+        width: 64px;
+        background-size: contain;
     }
 
     .sl-scratch-img{
-        background: url("@/assets/icons/Scratch_Cat_Pictture.png");
+        background: url("@/assets/icons/code-kid-scratch.png");
         background-size: cover;
         background-color: #00a4df20;
     }
 
     .sl-kodu-img{
-        background: url("@/assets/icons/kodu.png");
+        background: url("@/assets/icons/code-kid-kodu.png");
         background-size: cover;
         background-color: #00a4df20;
     }
 
     .sl-game-img{
-        background: url("@/assets/image/game-basic.jpg");
+        background: url("@/assets/icons/code-kid-game.png");
         background-size: cover;
         background-color: #00a4df20;
     }
 
     .sl-app-img{
-        background: url("@/assets/icons/app_dev.png");
+        background: url("@/assets/icons/code-kid-app.png");
         background-size: cover;
         background-color: #00a4df20;
     }
 
     .sl-web-img{
-        background: url("@/assets/icons/html-icon.png");
+        background: url("@/assets/icons/code-kid-web.png");
         background-size: cover;
         background-color: #00a4df20;
     }
 
     .sl-python-img{
-        background: url("@/assets/icons/Dev.png");
+        background: url("@/assets/icons/code-kid-python.png");
         background-size: cover;
         background-color: #00a4df20;
     }
@@ -865,6 +1071,8 @@ export default {
         margin-top: 30px;
         box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
         background: url("@/assets/image/BannerKidCourse.png");
+        background-size: cover;
+        background-position: 0 -20px;
     }
 
     .line-bar{
@@ -885,7 +1093,7 @@ export default {
     }
 
     .e-main{
-        height: 4600px;
+        height: 5100px;
     }
 
     .e-header-distince{

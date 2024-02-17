@@ -2,7 +2,7 @@
     <div class="e-home">
         <div class="section1">
             <div class="e-container">
-                <div class="s-main">
+                <div class="s-main" data-aos="fade-right">
                     <div class="s-main_leftside">
                         <div class="s-main_title bold">EVO Education</div>
                         <div class="s-main_subtitle semibold">Hệ Thống Giáo Dục Phát Triển Toàn Diện Cho Trẻ</div>
@@ -11,21 +11,21 @@
                     </div>
                     <div class="s-main_rightside"></div>
                 </div>
-                <div class="s-impressive semibold">Những con số <span class="s-impressive impressive semibold">Ấn Tượng</span></div>
+                <div data-aos="fade-right" class="s-impressive semibold">Những con số <span class="s-impressive impressive semibold">Ấn Tượng</span></div>
                 <div class="s-impressive-main">
-                    <div class="impressive-item">
+                    <div data-aos="zoom-in" class="impressive-item">
                         <div class="number bold" id="countExp">0</div>
                         <div class="title semibold">Năm kinh nghiệm</div>
                     </div>
-                    <div class="impressive-item">
+                    <div data-aos="zoom-in-up" class="impressive-item">
                         <div class="number bold" id="countStudent">0</div>
                         <div class="title semibold">Học viên tốt nghiệp có việc làm</div>
                     </div>
-                    <div class="impressive-item">
+                    <div data-aos="zoom-in-up" class="impressive-item">
                         <div class="number bold" id="countBase">0</div>
                         <div class="title semibold">Tổng số cơ sở</div>
                     </div>
-                    <div class="impressive-item">
+                    <div data-aos="zoom-in-down" class="impressive-item">
                         <div class="number bold" id="countTeacher">0</div>
                         <div class="title semibold">Giáo viên dày dặn kinh nghiệm</div>
                     </div>
@@ -33,7 +33,7 @@
             </div>
         </div>
 
-        <div class="section2">
+        <!-- <div class="section2">
             <div class="e-container">
                 <div class="s-title bold">Học tập cùng <span class="s-title s-title-evo bold">EVO Education</span> </div>
                 <div class="s-subtitle">Với các phương thức và khoá học đa dạng, EVO Education đáp ứng nhu cầu học tập của từng học sinh với cam kết kết quả tốt nhất.</div>
@@ -74,12 +74,11 @@
                     </div>
                 </div>
             </div>
-        </div>
-
+        </div> -->
         <div class="section3">
             <div class="e-container">
-                <div class="s3-title section-title bold">Trẻ em học lập trình tại <span class="bold color-b">EVO Education</span></div>
-                <el-carousel class="course-carosel pc-mode" :interval="5000" type="card" height="300px">
+                <div data-aos="fade-right" class="s3-title section-title bold">Trẻ em học lập trình tại <span class="bold color-b">EVO Education</span></div>
+                <el-carousel data-aos="fade-right" class="course-carosel pc-mode" :interval="5000" type="card" height="300px">
                     <el-carousel-item class="course-carousel-item" v-for="(item, index) in homeRes[lang].courseCarousel" :key="index">
                         <div class="cc-header">
                             <div class="cc-logo s-icon" :class="item.logo"></div>
@@ -109,12 +108,13 @@
                         </div>
                     </el-carousel-item>
                 </el-carousel>
-                <div class="semibold" style="cursor: pointer; width: 100%; text-align: center; margin-top: 30px; color: rgb(89, 89, 255);">Xem tất cả khóa học</div>
+                <div class="semibold" @click="watchAllCourse" style="cursor: pointer; width: 100%; text-align: center; margin-top: 30px; color: rgb(89, 89, 255);">Xem tất cả khóa học</div>
             </div>
             <div class="e-container">
-                <div class="s3-title section-title bold">Học lập trình cho người lớn tại <span class="bold color-b">EVO Education</span></div>
+                <div data-aos="fade-left" class="s3-title section-title bold">Học lập trình cho người lớn tại <span class="bold color-b">EVO Education</span></div>
                 <div class="flex s3-p2-container" style="margin-top: 50px; justify-content: space-evenly;">
-                    <div class="s3-p2-item">
+                    <div data-aos="fade-up"
+                         data-aos-duration="2000" class="s3-p2-item">
                         <div class="s3-p2-item__header">
                             <div class="s3-p2-item__title bold color-f">Front-End</div>
                             <div class="s3-p2-item__subtitle color-f">Xây dựng giao diện web</div>
@@ -130,7 +130,8 @@
                         </div>
                         <button @click="scrollToForm" class="see-more-btn__s3 semibold">Đăng ký học</button>
                     </div>
-                    <div class="s3-p2-item">
+                    <div data-aos="fade-up"
+                         data-aos-duration="2300" class="s3-p2-item">
                         <div class="s3-p2-item__header">
                             <div class="s3-p2-item__title bold color-f">RestfulAPI</div>
                             <div class="s3-p2-item__subtitle color-f">Xây dựng API</div>
@@ -146,7 +147,8 @@
                         </div>
                         <button @click="scrollToForm" class="see-more-btn__s3 semibold">Đăng ký học</button>
                     </div>
-                    <div class="s3-p2-item">
+                    <div data-aos="fade-up"
+                         data-aos-duration="2600" class="s3-p2-item">
                         <div class="s3-p2-item__header">
                             <div class="s3-p2-item__title bold color-f">Back-End</div>
                             <div class="s3-p2-item__subtitle color-f">Xử lý dữ liệu logic</div>
@@ -163,7 +165,8 @@
                         <button @click="scrollToForm" class="see-more-btn__s3 semibold">Đăng ký học</button>
 
                     </div>
-                    <div class="s3-p2-item">
+                    <div data-aos="fade-up"
+                         data-aos-duration="3000" class="s3-p2-item">
                         <div class="s3-p2-item__header">
                             <div class="s3-p2-item__title bold color-f">Database</div>
                             <div class="s3-p2-item__subtitle color-f">Lưu trữ và xử lý dữ liệu</div>
@@ -183,45 +186,95 @@
                 </div>
             </div>
         </div>
+        <div class="section2">
+            <div class="e-container">
+                <div data-aos="fade-right" class="s-title bold">Tại sao phụ huynh nên chọn <span class="s-title s-title-evo bold">EVO Education</span></div>
+                <div class="section2-main">
+                    <div class="content-container">
+                        <div data-aos="flip-left" class="section2-main-item">
+                            <div class="section2-main-item__icon icon-overview"></div>
+                            <div class="section2-main-item__text semibold">Lộ trình học toàn diện</div>
+                        </div>
+                        <div data-aos="flip-right" class="section2-main-item">
+                            <div class="section2-main-item__icon icon-teacher"></div>
+                            <div class="section2-main-item__text semibold">Đội ngũ giảng viên tâm huyết</div>
+                        </div>
+                        <div data-aos="flip-left" class="section2-main-item">
+                            <div class="section2-main-item__icon icon-lesson"></div>
+                            <div class="section2-main-item__text semibold">Bài giảng sinh động</div>
+                        </div>
+                        <div data-aos="flip-right" class="section2-main-item">
+                            <div class="section2-main-item__icon icon-life"></div>
+                            <div class="section2-main-item__text semibold">Đồng hành trọn đời</div>
+                        </div>
+                    </div>
+                </div>
+                <div data-aos="fade-right" class="s-title bold"><span class="s-title s-title-evo bold">Lộ trình học</span> cá nhân hóa cho từng học viên</div>
+                <div data-aos="fade-left" class="s2-progress">
+                </div>
+                <div data-aos="fade-right" class="s-title bold"><span class="s-title s-title-evo bold">Học viên</span> nói gì về EVO Education</div>
+                <div class="s2-p2-content">
+                    <div class="s2-p2-contaner">
+                        <div data-aos="fade-right" class="parent-rate-item">
+                            <div class="stars"></div>
+                            <div class="main-rate">EVO đã thay đổi cách tôi nhìn nhận về học tập. Tôi rất vui khi trở thành một phần của cộng đồng EVO</div>
+                            <div class="line"></div>
+                            <div class="parent-name semibold">HV. Nguyễn Thị Hương</div>
+                        </div>
+                        <div data-aos="fade-up" class="parent-rate-item">
+                            <div class="stars"></div>
+                            <div class="main-rate">Các thầy tại EVO đã truyền cho con cảm hứng rất lớn đối với lập trình và để lại ấn tượng trong con.</div>
+                            <div class="line"></div>
+                            <div class="parent-name semibold">HV. Trần Văn Nam</div>
+                        </div>
+                        <div data-aos="fade-left" class="parent-rate-item">
+                            <div class="stars"></div>
+                            <div class="main-rate">Học tập tại EVO đã giúp em gặp gỡ rất nhiều bạn bè mới và biết thêm rất nhiều điều mới mẻ</div>
+                            <div class="line"></div>
+                            <div class="parent-name semibold">HV. Lê Thị Linh</div>
+                        </div>
 
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="section4">
             <div class="e-container" style="display: flex; align-items: center; column-gap: 30px;">
                 <div>
-                    <div class="s4-title bold color-3" style="font-size: 40px; padding-top: 50px;">Học thử <span class="bold color-b">trải nghiệm thật</span></div>
+                    <div data-aos="fade-right" class="s4-title bold color-3" style="font-size: 40px; padding-top: 50px;">Học thử <span class="bold color-b">trải nghiệm thật</span></div>
                     <div style="margin-top: 30px;">
-                        <div class="semibold color-5 lh-44" style="font-size: 17px; " v-for="(item, index) in homeRes[lang].section4Content" :key="index"> {{ item }}</div>
+                        <div data-aos="fade-right" class="semibold color-5 lh-44" style="font-size: 17px; " v-for="(item, index) in homeRes[lang].section4Content" :key="index"> {{ item }}</div>
                     </div>
-                    <div @click="scrollToForm" class="bold" style="cursor: pointer; padding: 10px 20px; border-radius: 8px; margin-top: 20px; color: #fff; max-width: 150px; text-align: center; background-color: #0297ce;">Đăng ký học thử</div>
+                    <div data-aos="zoom-in" @click="scrollToForm" class="bold" style="cursor: pointer; padding: 10px 20px; border-radius: 8px; margin-top: 20px; color: #fff; max-width: 150px; text-align: center; background-color: #0297ce;">Đăng ký học thử</div>
                 </div>
-                <div class="s4-right-side"></div>
+                <div data-aos="fade-left" class="s4-right-side"></div>
             </div>
         </div>
 
         <div class="section5" ref="submitForm" >
             <div class="e-container flex c-gap-10">
-                <div class="s5-left-side"></div>
+                <div data-aos="fade-right" class="s5-left-side"></div>
                 <div class="s5-right-side" v-if="showSubmitForm">
                     <div class="bold color-1" style="font-size: 32px; position: relative; left: 100px;">Học trải nghiệm <span class="bold color-b"> miễn phí </span></div>
                     <div class="leave-inf-area" style="display: flex; flex-direction: column;">
-                        <div><input ref="inpFullname" v-model="fullName" @blur="inpOnBlur('name')" placeholder="Họ tên học viên (Nguyễn Văn A)"></div>
-                        <div><input ref="inpPhonenumber" v-model="phoneNumber" @blur="inpOnBlur('phoneNumber')" placeholder="Số điện thoại (0975123222)"></div>
-                        <div><input ref="inpAge" type="number" v-model="age" @blur="inpOnBlur('age')" placeholder="Độ tuổi (8)"></div>
-                        <div><input v-model="address" @blur="inpOnBlur('address')" placeholder="Địa chỉ (Cầu Giấy - Hà Nội)"></div>
-                        <div class="e-subject">
+                        <div data-aos="fade-left"><input ref="inpFullname" v-model="fullName" @blur="inpOnBlur('name')" placeholder="Họ tên học viên (Nguyễn Văn A)"></div>
+                        <div data-aos="fade-left"><input ref="inpPhonenumber" v-model="phoneNumber" @blur="inpOnBlur('phoneNumber')" placeholder="Số điện thoại (0975123222)"></div>
+                        <div data-aos="fade-left"><input ref="inpAge" type="number" v-model="age" @blur="inpOnBlur('age')" placeholder="Độ tuổi (8)"></div>
+                        <div data-aos="fade-left"><input v-model="address" @blur="inpOnBlur('address')" placeholder="Địa chỉ (Cầu Giấy - Hà Nội)"></div>
+                        <div data-aos="fade-left" class="e-subject">
                             <el-tree-select
                                 class="e-subject-tree"
                                 v-model="subjectValue"
                                 :data="courseData"
                                 :render-after-expand="false"
                                 multiple
-                                show-checkbox
                             />
                         </div>
-                        <button class="semibold" @click="submit">Đăng ký ngay</button>
+                        <button data-aos="zoom-in" class="semibold" @click="submit">Đăng ký ngay</button>
                     </div>
                 </div>
 
-                <div class="s5-right-side-result" v-else>
+                <div data-aos="zoom-in" class="s5-right-side-result" v-else>
                     <el-result
                         icon="success"
                         title="Đăng ký thành công"
@@ -254,6 +307,8 @@
 <script>
 import homeRes from '@/resources/home.js'
 import loader from '@/components/loader.vue'
+import AOS from 'aos';
+import 'aos/dist/aos.css'
 export default {
     name: 'homeView',
     components: {loader},
@@ -376,102 +431,6 @@ export default {
                     },
                     ],
                 },
-                {
-                    value: '3',
-                    label: 'Chương trình theo bộ giáo dục',
-                    children: [
-                    {
-                        value: '3-1',
-                        label: 'Toán học',
-                        children: [
-                        {
-                            value: '3-1-0',
-                            label: 'Lớp 1-5',
-                        },
-                        {
-                            value: '3-1-1',
-                            label: 'Lớp 6-9',
-                        },
-                        {
-                            value: '3-1-2',
-                            label: 'Lớp 10-12',
-                        },
-                        ],
-                    },
-                    {
-                        value: '3-2',
-                        label: 'Vật lý',
-                        children: [
-                        {
-                            value: '3-2-0',
-                            label: 'Lớp 1-5',
-                        },
-                        {
-                            value: '3-2-1',
-                            label: 'Lớp 6-9',
-                        },
-                        {
-                            value: '3-2-2',
-                            label: 'Lớp 10-12',
-                        },
-                        ],
-                    },
-                    {
-                        value: '3-3',
-                        label: 'Hóa học',
-                        children: [
-                        {
-                            value: '3-3-0',
-                            label: 'Lớp 1-5',
-                        },
-                        {
-                            value: '3-3-1',
-                            label: 'Lớp 6-9',
-                        },
-                        {
-                            value: '3-3-2',
-                            label: 'Lớp 10-12',
-                        },
-                        ],
-                    },
-                    {
-                        value: '3-4',
-                        label: 'Văn học',
-                        children: [
-                        {
-                            value: '3-4-0',
-                            label: 'Lớp 1-5',
-                        },
-                        {
-                            value: '3-4-1',
-                            label: 'Lớp 6-9',
-                        },
-                        {
-                            value: '3-4-2',
-                            label: 'Lớp 10-12',
-                        },
-                        ],
-                    },
-                    {
-                        value: '3-5',
-                        label: 'Tiếng Anh',
-                        children: [
-                        {
-                            value: '3-5-0',
-                            label: 'Lớp 1-5',
-                        },
-                        {
-                            value: '3-5-1',
-                            label: 'Lớp 6-9',
-                        },
-                        {
-                            value: '3-5-2',
-                            label: 'Lớp 10-12',
-                        },
-                        ],
-                    },
-                    ],
-                },
                 ]
         }
     },
@@ -488,6 +447,9 @@ export default {
             this.isCounted = true;
         }
         this.processWhenMounted();
+        AOS.init({
+            duration: 1000,
+        })
     },
 
     watch:{
@@ -495,7 +457,9 @@ export default {
     },
 
     methods: {
-
+        watchAllCourse(){
+            this.$router.push('code-kid');
+        },
         showDialog(title, message){
             this.dialogTitle = title;
             this.dialogMessage = message;
@@ -528,6 +492,12 @@ export default {
                 
                 if (json.result == 'success') {
                     this.showSubmitForm = false;
+                    this.fullName = '';
+                    this.phoneNumber = '';
+                    this.address = '';
+                    this.subjectValue = null;
+                    this.subject = '';
+                    this.age = '';
                 }
             }
         },
@@ -545,8 +515,17 @@ export default {
                 this.showDialog('Đăng ký không thành công', 'Bạn phải chọn ít nhất 1 môn học!')
                 document.querySelector('.e-subject-tree .el-input__inner').focus();
                 return false;
+            } else if (!this.checkValidPhonenumber(this.phoneNumber)) {
+                this.showDialog('Đăng ký không thành công', 'Số điện thoại không hợp lệ. Vui lòng nhập đúng số điện thoại!')
+                this.$refs.inpPhonenumber.focus();
+                return false;
             }
             return true;
+        },
+
+        checkValidPhonenumber(phoneNumber) {
+            const regexPhoneNumber = /(84|0[3|5|7|8|9])+([0-9]{8})\b/g;
+            return phoneNumber.match(regexPhoneNumber) ? true : false;
         },
 
         setCounting(id, countTo, after){
@@ -627,6 +606,79 @@ export default {
 </script>
 <style>
 
+    .mobile-mode{
+        display: none;
+    }
+    .parent-rate-item .line{
+        width: 50px;
+        height: 2px;
+        background-color: #ffc911;
+        position: relative;
+        top: 4px;
+    }
+    .parent-rate-item .stars{
+        width: 150px;
+        background-size: 30px !important;
+        height: 30px;
+        background: url("@/assets/gif/icons8-star.gif");
+    }
+    .parent-rate-item .main-rate{
+        text-align: center;
+    } 
+    .parent-rate-item{
+        max-width: 300px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 12px;
+    }
+    .s2-p2-contaner{
+        margin-top: 40px;
+        display: flex;
+        justify-content: space-between;
+    }
+    .s2-progress{
+        height: 565px;
+        margin-top: 80px;
+        width: 100%;
+        background: url("@/assets/image/lotrinh_v2.png") no-repeat;
+        background-size: contain;
+    }
+    .section2-main-item{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 20px;
+    }
+    .section2-main-item__text{
+        align-items: center;
+    }
+    .section2-main-item__icon{
+        height: 50px;
+        width: 50px;
+        background-size: contain !important;
+        align-items: center;
+    }
+    .icon-overview{
+        background: url("@/assets/icons/icons8-overview-64.png");
+    }
+    .icon-teacher{
+        background: url("@/assets/icons/icons8-teach-50.png");
+    }
+    .icon-lesson{
+        background: url("@/assets/icons/icons8-lesson-50.png");
+    }
+    .icon-life{
+        background: url("@/assets/icons/icons8-life-cycle-64.png");
+    }
+    .section2-main .content-container{
+        display: grid;
+        grid-template-columns: auto auto;
+        row-gap: 80px;
+        margin-top: 80px;
+    }
+
     .el-input--suffix{
         width: 100%;
         height: 72px;
@@ -659,14 +711,14 @@ export default {
 
     .e-trial-fixed{
         position: fixed;
-        bottom: 20px;
-        right: 20px;
-        border-radius: 20px;
-        opacity: .4;
+        bottom: 0;
+        right: 0px;
+        border-radius: 20px; 
+        opacity: .7;
         z-index: 95;
-        height: 120px;
-        width: 120px;
-        background: url('@/assets/icons/trial-icon.png') no-repeat;
+        height: 150px;
+        width: 180px;
+        background: url('@/assets/image/submit-now.png') no-repeat;
         background-size: cover;
     }
 
@@ -942,15 +994,15 @@ export default {
     }
 
     .section3{
-        background-color: #00afef10;
+        background-color: #bb7d0006;
         height: 1400px;
         position: relative;
         padding-top: 20px;
     }
 
     .section2{
-        height: 1520px;
-        background-color: #bb7d0006;
+        height: 1820px;
+        background-color: #00afef10;
         position: relative;
         padding-top: 10px;
     }
@@ -1105,7 +1157,7 @@ export default {
     }
 
     .s-main_rightside{
-        background: url('@/assets/image/section1_img.png') no-repeat;
+        background: url('@/assets/image/HomeBanner.png') no-repeat;
         background-size: cover !important;
     }
 
@@ -1122,7 +1174,7 @@ export default {
     }
 
     .see-more-btn:hover{
-        background-color: #0089bb;
+        background-color: #2ac6ff;
 
     }
 

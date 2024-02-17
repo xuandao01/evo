@@ -4,13 +4,13 @@
             <div class="ai-history">
                 <div class="history-bar">
                     <div class="history-action">
-                        <div class="history-item">
+                        <div class="history-item" @click="switchToNewConversation">
                             <div class="add-icon"></div>
-                            <button @click="switchToNewConversation" class="semibold">Hội thoại mới</button>
+                            <button class="semibold">Hội thoại mới</button>
                         </div>
-                        <div class="history-item" v-if="historyQuestions.length > 0">
+                        <div class="history-item" @click="deleteHistoryConversation" v-if="historyQuestions.length > 0">
                             <div class="delete-icon"></div>
-                            <button @click="deleteHistoryConversation" class="semibold">Xóa lịch sử trò chuyện</button>
+                            <button class="semibold">Xóa lịch sử trò chuyện</button>
                         </div>
                     </div>
                     <div class="recent-text" v-if="historyQuestions.length > 0">Hôm nay</div>
@@ -78,6 +78,10 @@
 import Typewriter from 'typewriter-effect/dist/core';
 export default{
     name: "aiQuestion",
+    created(){
+        if (sessionStorage.lang) this.lang = sessionStorage.lang;
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    },
     mounted() {
         // this.sendRequest();
         window.addEventListener('keydown', this.handleOnKeydown)
@@ -97,19 +101,19 @@ export default{
             if (e && e.keyCode) {
                 switch(e.keyCode){
                     case 13: {
-                        if (this.currentQuest) {
+                        if (this.currentQuest && !this.isResponding) {
                             this.sendMessage(this.currentQuest);
                         }
                         break;
                     }
                 }
             }
-            console.log(e);
         },
         async sendMessage(message){
             if (message) {
                 let response = await this.sendRequest(message, true);
                 if (response) {
+                    this.isResponding = true;
                     this.handleAddMainConversation(message, response);
                 }
             }
@@ -134,11 +138,14 @@ export default{
                     document.querySelector(`#suggestionItemId${this.responseItems.length - 1}`).scrollIntoView({ behavior: "smooth", block: "end"})
                     new Typewriter(`#suggestionItemId${this.responseItems.length - 1}`, {
                         strings: response,
-                        autoStart: true,
+                        autoStart: false,
                         delay: 30,
                         cursor: '✦',
-                    });
+                    }).pauseFor(2000).typeString(response).start();
                 }, 150);
+                setTimeout(() => {
+                    this.isResponding = false;
+                }, 8000);
             } catch (e) {
                 console.log(e);
             }
@@ -195,6 +202,7 @@ export default{
             historyQuestions: [],
             i: 0,
             speed:500,
+            isResponding: false,
         }
     }
 }

@@ -2,10 +2,10 @@
     <div class="ev-header">
         <div class="header-left">
             <div class="h-logo" @click="() => {$router.push('/')}"></div>
-            <div class="header-content">
+            <div class="header-content desktop-mode">
                 <div class="h-container">
                     <div class="h-menu-item" v-for="(item, index) in homeRes[lang]['menubar']" :key="index">
-                        <div v-if="item.router == 'courses'">
+                        <div v-if="item.router == 'course-kid'">
                             <div class="r-courses" style="position: relative;">
                                 <router-link class="semibold" :to="'/' + item.router">{{ item.name }}</router-link>
                                 <el-tree
@@ -34,11 +34,22 @@
                 </div>
             </div>
         </div>
-        <div class="header-action">
+        <div class="header-action desktop-mode">
             <button class="h-btn1 semibold">{{ homeRes[lang]['menuButton'].action1.name }}</button>
             <button class="h-btn2 semibold">{{ homeRes[lang]['menuButton'].action2.name }}</button>
         </div>
-
+        <div class="header-right mobile-mode">
+            <div class="header-btn menu-button" @click="showMobileMenu"></div>
+            <div class="header-menu-mobile" v-if="isShowMobileMenu">
+                <div class="header-btn close-button" @click="isShowMobileMenu = false"></div>
+                <div class="header-menu-mobile__container">
+                    <div class="header-menu-mobile__item" v-for="(item, index) in homeRes[lang]['menubar']" :key="index">
+                        <router-link @click="isShowMobileMenu = false" class="semibold" :to="'/' + item.router">{{ item.name }}</router-link>
+                    </div>
+                </div>
+                <button class="h-btn2 semibold">{{ homeRes[lang]['menuButton'].action2.name }}</button>
+            </div>
+        </div>
     </div>
 </template>
 <script>
@@ -49,6 +60,7 @@ export default {
         return{
             homeRes: homeRes,
             lang: '',
+            isShowMobileMenu: false
         }
     },
     created(){
@@ -56,12 +68,15 @@ export default {
     },
 
     methods: {
+        showMobileMenu() {
+            this.isShowMobileMenu = true;
+        },
+
         courseSelected(node) {
             if (node.id) {
                 switch(node.id){
                     case 1: {
                         this.$router.push('course-kid');
-                        console.log(this.$router);
                         break;
                     }
                     
@@ -78,6 +93,102 @@ export default {
         }
     }
 
+    @media(max-width: 768px) {
+        .desktop-mode{
+            display: none !important;
+        }
+
+        .mobile-mode{
+            display: block !important;
+        }
+    }
+    .header-menu-mobile .h-btn2{
+        position: absolute;
+        bottom: 10px;
+        height: 40px;
+        width: 250px;
+        left: 50px;
+        border: unset;
+        outline: unset;
+        background-color: #fff;
+        border-radius: 12px;
+        cursor: pointer;
+    }
+    .mobile-mode .router-link-active::after{
+        content: '';
+        display: block;
+        height: 20px;
+        width: 20px;
+        border-radius: 50%;
+        background-color: #fff;
+        position: absolute;
+        left: 30px;
+        top: 30px;
+    }
+    .header-menu-mobile__container{
+        margin-top: 50px;
+    }
+    .header-menu-mobile{
+        position: fixed;
+        width: 350px;
+        height: 100vh;
+        top: 0;
+        right: 0;
+        background-color: #00afef;
+        animation-name: slide;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+    }
+    @keyframes slide {
+        from{
+            right: -300px;
+        }
+        to{
+            right: 0;
+        }
+    }
+
+    .header-menu-mobile__item{
+        padding: 12px;
+        height: 50px;
+        text-align: right;
+        line-height: 50px;
+        border-bottom: solid #fff 2px;
+        width: 60%;
+        position: relative;
+        left: 20%;
+    }
+
+    .header-menu-mobile__item > a{
+        text-decoration: none;
+        color: #fff;
+    }
+
+    .header-btn{
+        height: 50px;
+        width: 50px;
+        position: absolute;
+        right: 10px;
+        top: 7px;
+        background: url("@/assets/icons/icons8-menu-40.png") no-repeat;
+        background-size: 40px 40px;
+        background-position: 5px 5px;
+        cursor: pointer;
+    }
+
+    .close-button{
+        right: unset;
+        left: 10px;
+        background: url("@/assets/icons/icons8-close-40.png") no-repeat !important;
+    }
+
+    .mobile-mode{
+        display: none;
+    }
+
+    .h-btn1{
+        margin-left: 24px;
+    }
     
     .r-courses:hover .filter-tree{
         display: block;
@@ -134,7 +245,7 @@ export default {
         padding: 8px 0;
     }
 
-    .ev-header .h-container > .h-menu-item:hover a, .router-link-exact-active {
+    .ev-header .desktop-mode .h-container > .h-menu-item:hover a, .desktop-mode .router-link-exact-active {
         color: #00afef !important;
         border-bottom: solid 2px #00afef !important;
         cursor: pointer;
@@ -168,12 +279,12 @@ export default {
     }
 
     .header-action .h-btn2:hover{
-        background-color: #0391c5;
+        background-color: #2ac6ff;
     }
 
     .header-action .h-btn1:hover{
-        border-color: #0391c5;
-        color: #0391c5;
+        border-color: #2ac6ff;
+        color: #2ac6ff;
     }
 
 </style>
