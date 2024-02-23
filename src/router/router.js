@@ -47,6 +47,22 @@ const routers = [
         component: aboutsView
     },
     {
+        path: '/privacy-policy',
+        component: () => import(/* webpackChunkName: "group-user" */ '@/view/privacyPolicyView.vue')
+    },
+    {
+        path: '/policies-regulations',
+        component: () => import(/* webpackChunkName: "group-user" */ '@/view/policiesRegulations.vue')
+    },
+    {
+        path: '/terms-of-use',
+        component: () => import(/* webpackChunkName: "group-user" */ '@/view/termsOfUse.vue')
+    },
+    {
+        path: '/adult-course',
+        component: () => import(/* webpackChunkName: "group-user" */ '@/view/courseAdultView.vue')
+    },
+    {
         path: "/:catchAll(.*)", // Unrecognized path automatically matches 404
         redirect: '/',
     }

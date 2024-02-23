@@ -21,6 +21,16 @@
     src: url('@/assets/fonts/Open_Sans/static/OpenSans/OpenSans-Bold.ttf');
 }
 
+@font-face {
+    font-family: Bubble-gum;
+    src: url('@/assets/fonts/Bubblegum.ttf');
+}
+
+.bubblegum{
+    font-family: Bubble-gum;
+
+}
+
 .semibold{
     font-family: opensans-semibold;
 }
@@ -153,6 +163,10 @@
     top: 0;
     left: 0;
     z-index: 3;
+}
+
+.margin-header{
+    padding-top: 64px;
 }
 
 

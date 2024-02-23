@@ -79,7 +79,7 @@ export default {
     name: 'CourseView',
     data() {
         return {
-            showLoader: true,
+            showLoader: false,
             currentStep: 0,
         }
     },
@@ -91,9 +91,7 @@ export default {
     },
 
     created(){
-        setTimeout(() => {
-            this.showLoader = false;
-        }, 1500);
+        document.title = 'Các khóa học tại EVO';
         window.scrollTo({ top: 0, behavior: 'smooth' });
     },
 

@@ -100,7 +100,12 @@
                             <div class="cr-title bold">Bạn nhận được gì sau khóa học này
                                 <div class="line-cr-title"></div>
                             </div>
-                            <div class="rewarded-img"></div>
+                            <div class="rewarded-img rewarded-img-mobile-0"></div>
+                            <div class="rewarded-img rewarded-img-mobile rewarded-img-mobile-1"></div>
+                            <div class="rewarded-img rewarded-img-mobile rewarded-img-mobile-2"></div>
+                            <div class="rewarded-img rewarded-img-mobile rewarded-img-mobile-3"></div>
+                            <div class="rewarded-img rewarded-img-mobile rewarded-img-mobile-4"></div>
+                            <div class="rewarded-img rewarded-img-mobile rewarded-img-mobile-5"></div>
                         </div>
 
                         <div class="rewarded" ref="studyLine">
@@ -116,12 +121,12 @@
                                     <div class="sl-item-group">
                                         <div class="sl-item-age">
                                             <div class="sl-item-age-title">Độ tuổi phù hợp</div>
-                                            <div class="sl-item-age-value bold">Lớp 1-2 (6 -> 7 tuổi)</div>
+                                            <div class="sl-item-age-value bold">Lớp 1-2 (6 ➜ 7 tuổi)</div>
                                         </div>
                                         <div class="sl-item-rate">
                                             <div class="sl-item-rate-title">Độ khó</div>
                                             <div class="sl-item-rate-value">
-                                                <el-progress :percentage="30"  :color="customColors"/>
+                                                <el-progress :percentage="10"  :color="customColors"/>
                                             </div>
                                         </div>
                                     </div>
@@ -137,12 +142,12 @@
                                     <div class="sl-item-group">
                                         <div class="sl-item-age">
                                             <div class="sl-item-age-title">Độ tuổi phù hợp</div>
-                                            <div class="sl-item-age-value bold">Lớp 3-5 (8 -> 10 tuổi)</div>
+                                            <div class="sl-item-age-value bold">Lớp 3-5 (8 ➜ 10 tuổi)</div>
                                         </div>
                                         <div class="sl-item-rate">
                                             <div class="sl-item-rate-title">Độ khó</div>
                                             <div class="sl-item-rate-value">
-                                                <el-progress :percentage="45"  :color="customColors"/>
+                                                <el-progress :percentage="25"  :color="customColors"/>
                                             </div>
                                         </div>
                                     </div>
@@ -158,12 +163,12 @@
                                     <div class="sl-item-group">
                                         <div class="sl-item-age">
                                             <div class="sl-item-age-title">Độ tuổi phù hợp</div>
-                                            <div class="sl-item-age-value bold">Lớp 5-7 (10 -> 12 tuổi)</div>
+                                            <div class="sl-item-age-value bold">Lớp 5-7 (10 ➜ 12 tuổi)</div>
                                         </div>
                                         <div class="sl-item-rate">
                                             <div class="sl-item-rate-title">Độ khó</div>
                                             <div class="sl-item-rate-value">
-                                                <el-progress :percentage="60" :color="customColors"/>
+                                                <el-progress :percentage="40" :color="customColors"/>
                                             </div>
                                         </div>
                                     </div>
@@ -184,7 +189,7 @@
                                         <div class="sl-item-rate">
                                             <div class="sl-item-rate-title">Độ khó</div>
                                             <div class="sl-item-rate-value">
-                                                <el-progress :percentage="75" :color="customColors"/>
+                                                <el-progress :percentage="65" :color="customColors"/>
                                             </div>
                                         </div>
                                     </div>
@@ -201,6 +206,27 @@
                                         <div class="sl-item-age">
                                             <div class="sl-item-age-title">Độ tuổi phù hợp</div>
                                             <div class="sl-item-age-value bold">Trên 13 tuổi</div>
+                                        </div>
+                                        <div class="sl-item-rate">
+                                            <div class="sl-item-rate-title">Độ khó</div>
+                                            <div class="sl-item-rate-value">
+                                                <el-progress :percentage="85" :color="customColors"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="sl-item-btn semibold">Tìm hiểu thêm
+                                        <div class="right-arrow-animated"></div>
+                                    </div>
+                                </div>
+
+                                <div class="sl-item" @click="courseClick('python')">
+                                    <div class="sl-item-avt sl-python-img"></div>
+                                    <div class="sl-item-year semibold">Năm 6</div>
+                                    <div class="sl-item-title bold">Đấu trường Robotics</div>
+                                    <div class="sl-item-group">
+                                        <div class="sl-item-age">
+                                            <div class="sl-item-age-title">Độ tuổi phù hợp</div>
+                                            <div class="sl-item-age-value bold">Trên 15 tuổi</div>
                                         </div>
                                         <div class="sl-item-rate">
                                             <div class="sl-item-rate-title">Độ khó</div>
@@ -269,9 +295,7 @@ export default {
     created() {
         let me = this;
         window.scrollTo({ top: 0, behavior: 'smooth' });
-        setTimeout(() => {
-            this.showLoader = false;
-        }, 1000);
+        document.title = 'Khóa học robotics cho trẻ em tại EVO';
         window.addEventListener("scroll", () => {
             me.onScroll();
         });
@@ -294,7 +318,7 @@ export default {
                         this.subjectDetail.title = 'Khám Phá Cùng Robot: 🤖📚 Học Tập Cơ Bản Cho Trẻ Em';
                         this.subjectDetail.action = 'Đăng ký học thử miễn phí';
                         this.subjectDetail.studyType = 'offline';
-                        this.subjectDetail.numOfLesson = '14 buổi học';
+                        this.subjectDetail.numOfLesson = '15 buổi học';
                         this.subjectDetail.numOfStudent = '4 - 6 học sinh';
                         this.subjectDetail.content = [
                             '🥇 Dành cho trẻ em tiếp xúc lần đầu với robotica, giúp họ hiểu cơ bản về nguyên lý hoạt động của robot và tạo quen thuộc với các khái niệm cơ bản về lập trình.',
@@ -312,7 +336,7 @@ export default {
                         this.subjectDetail.title = 'Robot và Sự Sáng Tạo: 🚀🧠 Mức Độ Học Tập Tiên Tiến Cho Trẻ Em';
                         this.subjectDetail.action = 'Đăng ký học thử miễn phí';
                         this.subjectDetail.studyType = 'offline';
-                        this.subjectDetail.numOfLesson = '14 buổi học';
+                        this.subjectDetail.numOfLesson = '15 buổi học';
                         this.subjectDetail.numOfStudent = '4 - 6 học sinh';
                         this.subjectDetail.content = [
                             '🏆 Học sinh sẽ phát triển kỹ năng sáng tạo thông qua việc thiết kế và xây dựng các dự án robot độc đáo.',
@@ -327,7 +351,7 @@ export default {
                         this.subjectDetail.title = 'Điều Khiển Robot, Điều Khiển Tư Duy: 🎯💡 Phát Triển Kỹ Năng Tư Duy Cao Cấp Ở Trẻ Em';
                         this.subjectDetail.studyType = 'offline';
                         this.subjectDetail.action = 'Đăng ký học thử miễn phí';
-                        this.subjectDetail.numOfLesson = '14 buổi học';
+                        this.subjectDetail.numOfLesson = '15 buổi học';
                         this.subjectDetail.numOfStudent = '4 - 6 học sinh';
                         this.subjectDetail.content = [
                             '🎲 Tập trung vào việc lập trình và điều khiển robot, giúp học sinh phát triển tư duy logic và quyết định thông qua việc giải quyết các vấn đề phức tạp.',
@@ -342,7 +366,7 @@ export default {
                         this.subjectDetail.title = 'Thách Thức Robotic: 🌐🔧 Mức Độ Học Tập Chuyên Sâu Cho Trẻ Em Tài Năng';
                         this.subjectDetail.action = 'Đăng ký học thử miễn phí';
                         this.subjectDetail.studyType = 'offline';
-                        this.subjectDetail.numOfLesson = '14 buổi học';
+                        this.subjectDetail.numOfLesson = '15 buổi học';
                         this.subjectDetail.numOfStudent = '4 - 6 học sinh';
                         this.subjectDetail.content = [
                             '📲 Đối với trẻ em có kỹ năng đặc biệt, chương trình này đặt ra các thách thức robotica phức tạp và thú vị.',
@@ -357,7 +381,7 @@ export default {
                         this.subjectDetail.title = 'Nghệ Sĩ Robot: 🤖🎓 Hướng Dẫn Đội Ngũ Siêu Tài Năng Trong Lĩnh Vực Công Nghệ và Kỹ Thuật';
                         this.subjectDetail.action = 'Đăng ký học thử miễn phí';
                         this.subjectDetail.studyType = 'offline';
-                        this.subjectDetail.numOfLesson = '14 buổi học';
+                        this.subjectDetail.numOfLesson = '15 buổi học';
                         this.subjectDetail.numOfStudent = '4 - 6 học sinh';
                         this.subjectDetail.content = [
                             '💻 Đào tạo trẻ em trở thành những chuyên gia robotica, đặt họ vào bối cảnh thách thức và dự án phức tạp.',
@@ -369,14 +393,16 @@ export default {
                         break;
                     }
                     case 'python': {
-                        this.subjectDetail.title = 'Khóa học lập trình Python cho trẻ';
+                        this.subjectDetail.title = 'Đấu trường robotic: 🤖🔑 Hướng Dẫn Đội Ngũ Siêu Tài Năng Trong Lĩnh Vực Công Nghệ và Kỹ Thuật';
                         this.subjectDetail.action = 'Đăng ký học thử miễn phí';
-                        this.subjectDetail.numOfLesson = '14 buổi học';
-                        this.subjectDetail.numOfStudent = '5 - 8 học sinh';
+                        this.subjectDetail.studyType = 'offline';
+                        this.subjectDetail.numOfLesson = '15 buổi học';
+                        this.subjectDetail.numOfStudent = '4 - 6 học sinh';
                         this.subjectDetail.content = [
-                            '⌨️ Khóa học Lập trình Python cho trẻ em là một cơ hội tuyệt vời để giới thiệu ngôn ngữ lập trình đơn giản và mạnh mẽ này cho các em. Trong khóa học này, trẻ sẽ học cách sử dụng Python để tạo ra các chương trình đơn giản, từ việc hiển thị thông điệp đến việc tạo ra các trò chơi và ứng dụng nhỏ.',
-                            '⌨️ Khóa học tập trung vào việc làm cho quá trình học lập trình trở nên thú vị và dễ hiểu. Trẻ em sẽ tìm hiểu cú pháp cơ bản của Python, làm quen với các khái niệm lập trình như biến, điều kiện, và vòng lặp. Ngoài ra, họ cũng sẽ có cơ hội ứng dụng kiến thức của mình để tạo ra những dự án nhỏ và sáng tạo.',
-                            '⌨️ Khóa học này không chỉ giúp trẻ em hiểu về lập trình Python mà còn khuyến khích tư duy logic và sự sáng tạo, mở ra một cánh cửa để trẻ phát triển kỹ năng lập trình ứng dụng trong tương lai.'
+                            '💻 Đào tạo trẻ em trở thành những chuyên gia robotica, đặt họ vào bối cảnh thách thức và dự án phức tạp.',
+                            '💻 Tập trung vào nâng cao kỹ năng nghiên cứu và phát triển công nghệ mới, đồng thời khuyến khích tinh thần sáng tạo và lãnh đạo.',
+                            '💻 Học sinh sẽ được thách thức với các dự án đặc biệt, từ việc giải quyết các vấn đề toàn cầu đến việc phát triển công nghệ đột phá.',
+                            '💻 Giao tiếp hiệu quả, quản lý dự án và làm việc nhóm sẽ là những kỹ năng chính để chuẩn bị họ cho sự nghiệp trong lĩnh vực công nghiệp và nghiên cứu robotica.',
                         ]
                         this.showPopupSubject = true;
                         break;
@@ -509,7 +535,7 @@ export default {
                 action: 'b'
             },
             currentProgress: 0,
-            showLoader: true,
+            showLoader: false,
             submitObject: {
                 parentName: '',
                 phonenumber: '',
@@ -533,6 +559,104 @@ export default {
 </script>
 
 <style scoped>
+    @media (max-width: 480px) {
+        .submit-remind-content__right{
+            height: 130px !important;
+        }
+        .submit-remind-content{
+            flex-direction: column-reverse;
+        }
+        .submit-remind{
+            margin-left: 0 !important;
+        }
+        .student-product{
+            flex-direction: column;
+            left: 10px !important;
+            row-gap: 15px;
+        }
+        .e-main{
+            height: 7900px !important;
+        }
+        .banner-title{
+            line-height: 30px !important;
+            width: 300px !important;
+        }
+        .e-banner{
+            height: 280px !important;
+        }
+        .main-content{
+            margin-top: 30px !important;
+        }
+        .main-content .content{
+            flex-direction: column;
+            row-gap: 15px;
+        }
+        .overview{
+            width: 100% !important;
+            margin-left: 0 !important;
+        }
+        .choose-reason .cr-title, .cr-left-side{
+            margin-left: 0 !important;
+            left: 0 !important;
+        }
+        .cr-item-text {
+            position: relative;
+            left: 36px;
+            margin-left: 0 !important;
+            top: -8px;
+        }
+        .cr-title{
+            margin-left: 0 !important;
+        }
+        .rewarded-img{
+            left: 10px !important;
+            width: 238px !important;
+            height: 195px !important;
+        }
+        .rewarded-img-mobile-0{
+            background-image: url('@/assets/image/5c-title.png') !important;
+            width: 290px !important;
+            height: 34px !important;
+        }
+        .rewarded-img-mobile{
+            display: block !important;
+        }
+        .rewarded-img-mobile-1{
+            background-image: url('@/assets/image/5c-1.png') !important;
+        }
+        .rewarded-img-mobile-2{
+            background-image: url('@/assets/image/5c-2.png') !important;
+        }
+        .rewarded-img-mobile-3{
+            background-image: url('@/assets/image/5c-3.png') !important;
+        }
+        .rewarded-img-mobile-4{
+            background-image: url('@/assets/image/5c-4.png') !important;
+        }
+        .rewarded-img-mobile-5{
+            background-image: url('@/assets/image/5c-5.png') !important;
+        }
+        .study-line{
+            grid-template-columns: auto !important;
+            left: 10px !important;
+        }
+        .cr-item-content{
+            padding-top: 2px !important;
+        }
+        .overview .left-content, .overview .right-content{
+            width: 100% !important;
+        }
+        .progress-bar, .submit-form .right-side{
+            display: none !important;
+        }
+        .content, .submit-form, .form-element{
+            width: 100% !important;
+            margin-left: 0 !important;
+        }
+        .e-banner .banner-imgae{
+            height: 150px !important;
+        }
+    }
     .submit-remind-content__right{
         height: 300px;
         width: 100%;
@@ -691,6 +815,13 @@ export default {
     .sl-web-img{
         background: url("@/assets/icons/robotic-3.png");
         background-size: cover;
+        background-color: #00a4df20;
+    }
+
+    .sl-python-img{
+        background: url("@/assets/icons/robotic-6.png");
+        background-size: cover;
+        background-position: -10px 0;
         background-color: #00a4df20;
     }
 

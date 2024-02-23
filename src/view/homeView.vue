@@ -77,8 +77,44 @@
         </div> -->
         <div class="section3">
             <div class="e-container">
-                <div data-aos="fade-right" class="s3-title section-title bold">Trẻ em học lập trình tại <span class="bold color-b">EVO Education</span></div>
-                <el-carousel data-aos="fade-right" class="course-carosel pc-mode" :interval="5000" type="card" height="300px">
+                <div data-aos="fade-right" class="s3-title section-title bold">Các khóa học lập trình tại <span class="bold color-b">EVO Education</span></div>
+                <div class="content">
+                    <div class="sec-3-item" @click="redirectToCourse('kids')">
+                        <div class="sec-3-item-image"></div>
+                        <div class="sec-3-item-title bold">EVO KID</div>
+                            <div class="sec-3-item-age__icon"></div>
+                        <div class="sec-3-item-age semibold">🎂 6 - 15 Tuổi</div>
+                        <div class="sec-3-item-des">Lộ trình được thiết kế cho 
+                                                    những bạn nhỏ từ lớp 1
+                                                    đến lớp 9 làm quen với 
+                                                    máy tính và công nghệ
+                                                </div>
+                        <div class="sec-3-item-button bold">Tìm hiểu thêm</div>
+                    </div>
+
+                    <div class="sec-3-item sec-3-item-2" @click="redirectToCourse('teens')">
+                        <div class="sec-3-item-image sec-3-item-image-2"></div>
+                        <div class="sec-3-item-title sec-3-item-title-2 bold">EVO TEEN</div>
+                            <div class="sec-3-item-age__icon"></div>
+                        <div class="sec-3-item-age semibold">🎂 16 - 18 Tuổi</div>
+                        <div class="sec-3-item-des">Lộ trình được thiết kế cho 
+                                                    những bạn học sinh cấp 3 tiếp cận với một số ngôn ngữ lập trình thông dụng như java, c++, python, javascript,...
+                                                </div>
+                        <div class="sec-3-item-button sec-3-item-button-2 bold">Tìm hiểu thêm</div>
+                    </div>
+
+                    <div class="sec-3-item sec-3-item-3" @click="redirectToCourse('adult')">
+                        <div class="sec-3-item-image sec-3-item-image-3"></div>
+                        <div class="sec-3-item-title sec-3-item-title-3 bold">EVO ADULT</div>
+                            <div class="sec-3-item-age__icon"></div>
+                        <div class="sec-3-item-age semibold">🎂 Trên 18 Tuổi</div>
+                        <div class="sec-3-item-des">Lộ trình được thiết kế học để đi làm định hướng nghề nghiệp theo backend hoặc frontend hay app developer,...
+                                                </div>
+                        <div class="sec-3-item-button sec-3-item-button-3 bold">Tìm hiểu thêm</div>
+                    </div>
+                </div>
+                
+                <!-- <el-carousel data-aos="fade-right" class="course-carosel pc-mode" :interval="5000" type="card" height="300px">
                     <el-carousel-item class="course-carousel-item" v-for="(item, index) in homeRes[lang].courseCarousel" :key="index">
                         <div class="cc-header">
                             <div class="cc-logo s-icon" :class="item.logo"></div>
@@ -107,11 +143,35 @@
                             </div>
                         </div>
                     </el-carousel-item>
-                </el-carousel>
+                </el-carousel> -->
                 <div class="semibold" @click="watchAllCourse" style="cursor: pointer; width: 100%; text-align: center; margin-top: 30px; color: rgb(89, 89, 255);">Xem tất cả khóa học</div>
             </div>
+            <div class="section-6">
+                <div class="e-container">
+                    <div data-aos="fade-left" class="s3-title section-title bold">Đội ngũ giảng viên tại <span class="bold color-b">EVO Education</span></div>
+                    <div class="sec-6-content">
+                        <el-carousel :interval="25000" arrow="always">
+                            <el-carousel-item class="teacher-item-container" v-for="(item, index) in teacherData" :key="index">
+                                <div class="teacher-item" v-for="(teacher, inx) in item" :key="inx">
+                                    <div class="teacher-image" :class="teacher.imageClass">
+                                        <div class="teacher-image-inner">
+
+                                        </div>
+                                    </div>
+                                    <div class="teacher-info">
+                                        <div class="teacher-name bold">{{ teacher.teacherNane }}</div>
+                                        <div class="teacher-short-des semibold">{{ teacher.teacherShortDescription }}</div>
+                                        <div class="short-line"></div>
+                                        <div class="teacher-long-des">{{ teacher.teacherLongDescription }}</div>
+                                    </div>
+                                </div>
+                            </el-carousel-item>
+                        </el-carousel>
+                    </div>
+                </div>
+            </div>
             <div class="e-container">
-                <div data-aos="fade-left" class="s3-title section-title bold">Học lập trình cho người lớn tại <span class="bold color-b">EVO Education</span></div>
+                <!-- <div data-aos="fade-left" class="s3-title section-title bold">Học lập trình cho người lớn tại <span class="bold color-b">EVO Education</span></div>
                 <div class="flex s3-p2-container" style="margin-top: 50px; justify-content: space-evenly;">
                     <div data-aos="fade-up"
                          data-aos-duration="2000" class="s3-p2-item">
@@ -183,7 +243,7 @@
                         <button @click="scrollToForm" class="see-more-btn__s3 semibold">Đăng ký học</button>
 
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
         <div class="section2">
@@ -209,9 +269,9 @@
                         </div>
                     </div>
                 </div>
-                <div data-aos="fade-right" class="s-title bold"><span class="s-title s-title-evo bold">Lộ trình học</span> cá nhân hóa cho từng học viên</div>
+                <!--<div data-aos="fade-right" class="s-title bold"><span class="s-title s-title-evo bold">Lộ trình học</span> cá nhân hóa cho từng học viên</div>
                 <div data-aos="fade-left" class="s2-progress">
-                </div>
+                </div>-->
                 <div data-aos="fade-right" class="s-title bold"><span class="s-title s-title-evo bold">Học viên</span> nói gì về EVO Education</div>
                 <div class="s2-p2-content">
                     <div class="s2-p2-contaner">
@@ -309,9 +369,10 @@ import homeRes from '@/resources/home.js'
 import loader from '@/components/loader.vue'
 import AOS from 'aos';
 import 'aos/dist/aos.css'
+
 export default {
     name: 'homeView',
-    components: {loader},
+    components: {loader },
     data(){
         return{
             homeRes: homeRes,
@@ -431,12 +492,55 @@ export default {
                     },
                     ],
                 },
+                ],
+            teacherData: [
+                [
+                    {
+                        imageClass: 'teacher-image-1',
+                        teacherNane: 'Trịnh Xuân Đào',
+                        teacherShortDescription: 'Cử nhân kỹ thuật phần mềm ĐH Công Nghiệp HN',
+                        teacherLongDescription: 'Cử nhân kỹ thuật phần mềm ĐH Công Nghiệp HN Cử nhân kỹ thuật phần mềm ĐH Công Nghiệp HN',
+                    },
+                    {
+                        imageClass: 'teacher-image-1',
+                        teacherNane: 'Trịnh Xuân Đào',
+                        teacherShortDescription: 'Cử nhân kỹ thuật phần mềm ĐH Công Nghiệp HN',
+                        teacherLongDescription: 'Cử nhân kỹ thuật phần mềm ĐH Công Nghiệp HN Cử nhân kỹ thuật phần mềm ĐH Công Nghiệp HN',
+                    },
+                    {
+                        imageClass: 'teacher-image-1',
+                        teacherNane: 'Trịnh Xuân Đào',
+                        teacherShortDescription: 'Cử nhân kỹ thuật phần mềm ĐH Công Nghiệp HN',
+                        teacherLongDescription: 'Cử nhân kỹ thuật phần mềm ĐH Công Nghiệp HN Cử nhân kỹ thuật phần mềm ĐH Công Nghiệp HN',
+                    }
+                ],
+                [
+                {
+                        imageClass: 'teacher-image-1',
+                        teacherNane: 'Trịnh Xuân Đào',
+                        teacherShortDescription: 'Cử nhân kỹ thuật phần mềm ĐH Công Nghiệp HN',
+                        teacherLongDescription: 'Cử nhân kỹ thuật phần mềm ĐH Công Nghiệp HN Cử nhân kỹ thuật phần mềm ĐH Công Nghiệp HN',
+                    },
+                    {
+                        imageClass: 'teacher-image-1',
+                        teacherNane: 'Trịnh Xuân Đào',
+                        teacherShortDescription: 'Cử nhân kỹ thuật phần mềm ĐH Công Nghiệp HN',
+                        teacherLongDescription: 'Cử nhân kỹ thuật phần mềm ĐH Công Nghiệp HN Cử nhân kỹ thuật phần mềm ĐH Công Nghiệp HN',
+                    },
+                    {
+                        imageClass: 'teacher-image-1',
+                        teacherNane: 'Trịnh Xuân Đào',
+                        teacherShortDescription: 'Cử nhân kỹ thuật phần mềm ĐH Công Nghiệp HN',
+                        teacherLongDescription: 'Cử nhân kỹ thuật phần mềm ĐH Công Nghiệp HN Cử nhân kỹ thuật phần mềm ĐH Công Nghiệp HN',
+                    }
                 ]
+            ]
         }
     },
     created(){
         if (sessionStorage.lang) this.lang = sessionStorage.lang;
         window.scrollTo({ top: 0, behavior: 'smooth' });
+        document.title = 'Trường học Công nghệ và Sáng tạo EVO';
     },
     mounted(){
         if (!this.isCounted) {
@@ -457,8 +561,21 @@ export default {
     },
 
     methods: {
+        redirectToCourse(course){
+            switch(course) {
+                case 'teens':
+                case 'kids': {
+                    this.$router.push('code-kid');
+                    break;
+                }
+                case 'adult': {
+                    this.$router.push('code-adult');
+                    break;
+                }
+            }
+        },
         watchAllCourse(){
-            this.$router.push('code-kid');
+            this.$router.push('course-kid');
         },
         showDialog(title, message){
             this.dialogTitle = title;
@@ -604,7 +721,183 @@ export default {
     },
 }
 </script>
-<style>
+<style scoped>
+
+    .teacher-short-des{
+        margin-top: 10px;
+        text-align: center;
+    }
+    .teacher-long-des{
+        margin-top: 10px;
+        text-align: center;
+    }
+    .teacher-name{
+        text-align: center;
+        margin-top: 100px;
+        font-size: 24px;
+    }
+    ::v-deep .el-carousel__container {
+        height: 500px;
+    }
+
+    .teacher-item .teacher-image-inner{
+        height: 190px;
+        width: 190px;   
+        border-radius: 50%;
+        background-image: url('@/assets/image/txdao.jpg');
+        background-size: cover;
+        position: relative;
+        top: 10px;
+    }
+
+    .teacher-item .teacher-image{
+        height: 200px;
+        width: 200px;
+        border-radius: 50%;
+        position: absolute;
+        left: 50px;
+        background-image: linear-gradient(#ffc911, #ff6f42);
+        z-index: 3;
+    }
+
+    .short-line{
+        background-image: linear-gradient(45deg,#ffc911, #ff6f42);
+        height: 3px;
+        width: 100%;
+        margin-top: 5px;
+    }
+
+    .sec-6-content{
+        margin-top: 90px;
+    }
+    .teacher-item-container{
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .teacher-info{
+        position: relative;
+        top: 100px;
+        height: 300px;
+        width: 250px;
+        border-radius: 20px;
+        background-color: #fff;
+        padding: 25px;
+    }
+    .teacher-item {
+        height: 550px;
+        width: 300px;
+        position: relative;
+    }
+    ::v-deep .el-carousel__item{
+        background-image: unset !important;
+        box-shadow: unset !important;
+    }
+
+    .section-6{
+        width: 100%;
+        height: 800px;
+        background-image: url('@/assets/image/bg-section4.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+    }
+
+    .sec-3-item-title-2{
+        color: #ff9103 !important;
+    }
+
+    .sec-3-item-button-2{
+        background-color: #ff9103 !important;
+    }
+
+    .sec-3-item-2:hover{
+        box-shadow: 0px 5px 20px #ff9103be !important;
+    }
+
+    .sec-3-item-title-3{
+        color: #ff6f42 !important;
+    }
+
+    .sec-3-item-button-3{
+        background-color: #ff6f42 !important;
+    }
+
+    .sec-3-item-3:hover{
+        box-shadow: 0px 5px 20px #ff6f42be !important;
+    }
+
+    .sec-3-item .sec-3-item-button:hover{
+        transition-duration: 0.5s;
+        transform: scale(1.05);
+    }
+
+    .sec-3-item .sec-3-item-button {
+        position: absolute;
+        bottom: 30px;
+        padding: 10px 30px;
+        border-radius: 20px;
+        color: #fff;
+        background-color: #fbc22d;
+        margin: 0 auto;
+        right: 90px;
+        cursor: pointer;
+    }
+
+    .sec-3-item .sec-3-item-des {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .sec-3-item .sec-3-item-age {
+        font-size: 20px;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .sec-3-item .sec-3-item-title{
+        font-family: Bubble-gum !important;
+        font-size: 28px;
+        text-align: center;
+        margin-top: 20px;
+        color: #fbc22d;
+    }
+
+    .sec-3-item .sec-3-item-image{
+        height: 237px;
+        width: 300px;
+        background-image: url('@/assets/icons/evo-kid.png');
+        background-size: cover;
+    }
+
+    .sec-3-item .sec-3-item-image-2{
+        background-image: url('@/assets/icons/evo-teen.png');
+    }
+
+    .sec-3-item .sec-3-item-image-3{
+        background-image: url('@/assets/icons/evo-adult.png');
+    }
+
+    .sec-3-item:hover{
+        box-shadow: 0px 5px 20px #fbc12dbe;
+        transform: translateY(-10px);
+    }
+
+    .sec-3-item{
+        height: 500px;
+        width: 300px;
+        box-shadow: 0px 5px 20px #8c8c8c9e;
+        border-radius: 20px;
+        padding: 25px;
+        position: relative;
+        cursor: pointer;
+        transition-duration: 0.5s;
+    }
+
+    .section3 .content{
+        margin-top: 50px;
+        display: flex;
+        justify-content: space-between;
+    }
 
     .mobile-mode{
         display: none;
@@ -697,11 +990,10 @@ export default {
     .e-subject{
         width: 126%;
         height: 72px;
-        border: solid #666666 1px;
         margin-top: 20px;
         margin-left: 50px;
         border-radius: 10px;
-        background-color: #fff;
+        background-color: transparent;
     }
 
     .e-trial-fixed:hover{
@@ -995,13 +1287,13 @@ export default {
 
     .section3{
         background-color: #bb7d0006;
-        height: 1400px;
+        height: 1750px;
         position: relative;
         padding-top: 20px;
     }
 
     .section2{
-        height: 1820px;
+        height: 1000px;
         background-color: #00afef10;
         position: relative;
         padding-top: 10px;
@@ -1106,7 +1398,7 @@ export default {
     }
 
     .s-title-evo{
-        color: #00afef;
+        color: #fdb830;
     }
 
     .section1{
@@ -1114,7 +1406,8 @@ export default {
         padding-top: 100px;
         height: 670px;
         background-color: #00afef10;
-        background-image: url('@/assets/image/section1_bg_2.png');
+        background-image: url('@/assets/image/sec-1-bg-3.jpg');
+        background-position: 0 -15px;
         background-repeat: no-repeat;
         background-size: cover;
     }
@@ -1130,18 +1423,18 @@ export default {
     }
 
     .s-main_title{
-        color: #00afef;
+        color: #fdb830;
         font-size: 44px;
     }
 
     .s-main_subtitle{
-        color: #565656;
+        color: #fff;
         font-size: 28px;
         margin-top: 12px;
     }
 
     .s-main_content{
-        color: #838383b5;
+        color: #fff;
         font-size: 18px;
         margin-top: 18px;
         text-align: justify;
@@ -1166,7 +1459,7 @@ export default {
         width: 200px;
         border-radius: 8px;
         border: unset;
-        background-color: #00afef;
+        background-color: #fdb830;
         color: #fff;
         font-size: 18px;
         margin-top: 40px;
@@ -1174,18 +1467,18 @@ export default {
     }
 
     .see-more-btn:hover{
-        background-color: #2ac6ff;
+        background-color: #fcaf14;
 
     }
 
     .s-impressive{
         margin-top: 60px;
-        color: #565656;
+        color: #fff;
         font-size: 32px;
     }
 
     .impressive{
-        color: #00afef;
+        color: #fdb830;
     }
 
     .s-impressive-main{
@@ -1203,12 +1496,12 @@ export default {
     }
 
     .impressive-item .number{
-        color: #373737;
+        color: #fff;
         font-size: 44px;
     }
 
     .impressive-item .title{
-        color: #545454;
+        color: #fff;
         font-size: 18px;
     }
 </style>

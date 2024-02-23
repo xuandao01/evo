@@ -41,6 +41,24 @@
                             <div class="event-item-right__see-more semibold">Xem chi tiết ➜</div>
                         </div>
                     </div>
+                    <div class="event-item"  data-aos="fade-right"
+                        data-aos-offset="100"
+                        data-aos-easing="ease-in-sine" @click="eventClick('dublin-tech')">
+                        <div class="event-left dublin-tech" ></div>
+                        <div class="event-right">
+                            <div class="event-item-right__title bold">Dublin Tech Summit</div>
+                            <div class="event-item-right__see-more semibold">Xem chi tiết ➜</div>
+                        </div>
+                    </div>
+                    <div class="event-item"  data-aos="fade-right"
+                        data-aos-offset="100"
+                        data-aos-easing="ease-in-sine" @click="eventClick('london-tech')">
+                        <div class="event-left london-tech" ></div>
+                        <div class="event-right">
+                            <div class="event-item-right__title bold">London Tech Week</div>
+                            <div class="event-item-right__see-more semibold">Xem chi tiết ➜</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -55,6 +73,7 @@ export default{
     name: "eventView",
     created() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
+        document.title = 'Sự kiện nổi bật';
     },
     mounted() {
         AOS.init({
@@ -80,6 +99,14 @@ export default{
                     window.open('https://io.google/2023/', '_blank');
                     break;
                 }
+                case 'dublin-tech': {
+                    window.open('https://dublintechsummit.tech/', '_blank');
+                    break;
+                }
+                case 'london-tech': {
+                    window.open('https://londontechweek.com/', '_blank');
+                    break;
+                }
             }
         },
     }
@@ -87,6 +114,24 @@ export default{
 </script>
 
 <style scoped>
+    @media (max-width: 480px) {
+        .event-banner{
+            height: 170px !important;
+        }
+        .event-item {
+            height: 250px !important;
+            display: flex !important;
+            flex-direction: column !important;
+            width: 245px !important;
+            row-gap: 15px;
+        }
+        .event-container{
+            width: 350px !important;
+        }
+        .event-left{
+            width: 250px !important;
+        }
+    }
     .web-submit-event{
         background-image: url("@/assets/image/web-submit-event.png") !important;
         background-position: 0 0 !important;
@@ -98,6 +143,14 @@ export default{
     .gg-io{
         background-image: url("@/assets/image/gg-io.png") !important;
         background-position: 0 0 !important;
+    }
+    .dublin-tech{
+        background-image: url("@/assets/image/dublin-tech.png") !important;
+        background-position: -35px 0 !important;
+    }
+    .london-tech{
+        background-image: url("@/assets/image/london-tech.png") !important;
+        background-position: 0px 0px !important;
     }
     .event-container{
         margin: 0 auto;
@@ -111,7 +164,7 @@ export default{
         max-width: 350px;
         display: flex;
         flex-direction: column;
-        row-gap: 10px;
+        row-gap: 30px;
     }
     .event-left{
         height: 200px;

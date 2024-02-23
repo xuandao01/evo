@@ -11,7 +11,7 @@
         <div class="sec-2">
             <div class="e-container">
                 <div class="title bold" data-aos="fade-right">Câu chuyện</div>
-                <div class="t-line" data-aos="fade-right"></div>
+                <div class="t-line t-line-title-1" data-aos="fade-right"></div>
                 <div class="sec-2-main">
                     <div class="sec-2-main__left" data-aos="fade-right">Năm 2019, giữa lòng phố Nguyễn Hoàng, một trung tâm dạy lập trình mang tên EVO mở cửa, mang sứ mệnh khơi dậy niềm đam mê công nghệ trong lòng trẻ em. EVO không chỉ dạy lập trình, mà còn là nơi nuôi dưỡng tư duy sáng tạo và giải quyết vấn đề cho các em nhỏ. Tại đây, từng bàn học như một thế giới thu nhỏ, nơi các em được thử nghiệm, lập trình những robot, trò chơi và ứng dụng của riêng mình. Mỗi buổi học, niềm hứng khởi trong mắt trẻ thể hiện sự học hỏi không ngừng. EVO không chỉ dạy kỹ năng, mà còn truyền cảm hứng, mở ra một tương lai công nghệ cho thế hệ trẻ.</div>
                     <div class="sec-2-main__right" data-aos="fade-left"></div>
@@ -22,7 +22,7 @@
         <div class="sec-3">
             <div class="e-container">
                 <div class="title bold" data-aos="fade-left">Sứ mệnh</div>
-                <div class="t-line line-right" data-aos="fade-left"></div>
+                <div class="t-line line-right t-line-title-2" data-aos="fade-left"></div>
                 <div class="sec-3-main">
                     <div class="sec-3-main__right" data-aos="fade-right"></div>
                     <div class="sec-3-main__left" data-aos="fade-left">EVO mang sứ mệnh trang bị kỹ năng lập trình cho trẻ em, đồng thời phát triển tư duy sáng tạo và giải quyết vấn đề</div>
@@ -33,7 +33,7 @@
         <div class="sec-2">
             <div class="e-container">
                 <div class="title bold" data-aos="fade-right">Tầm nhìn</div>
-                <div class="t-line" data-aos="fade-right"></div>
+                <div class="t-line t-line-title-3" data-aos="fade-right"></div>
                 <div class="sec-2-main">
                     <div class="sec-2-main__left" data-aos="fade-right">Tầm nhìn của EVO là tạo dựng nền tảng công nghệ vững chắc cho thế hệ tương lai, giúp họ tự tin và linh hoạt trong môi trường công nghệ biến đổi nhanh chóng. EVO không chỉ dạy lập trình, mà còn là nơi nuôi dưỡng niềm đam mê học hỏi, khám phá, và sự tự do sáng tạo, mở ra cánh cửa tương lai rộng lớn cho các em nhỏ.</div>
                     <div class="sec-4-main__right" data-aos="fade-left"></div>
@@ -78,7 +78,7 @@ import 'aos/dist/aos.css';
 export default{
     mounted() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
-
+        document.title = 'Về chúng tôi';
         AOS.init({
             duration: 1000,
         })
@@ -87,6 +87,46 @@ export default{
 </script>
 
 <style scoped>
+    @media (max-width: 480px) {
+        .sec-1-banner{
+            height: 170px !important;
+        }
+        .sec-1{
+            height: 300px !important;
+        }
+        .sec-2{
+            height: 900px !important;
+        }
+        .sec-5{
+            height: 1350px !important;
+        }
+        .sec-2-main, .sec-3-main, .sec-5-main{
+            flex-direction: column;
+            row-gap: 15px;
+        }
+        .sec-5-main{
+            row-gap: 55px !important;
+        }
+        .sec-2-main__left, .sec-2-main__right, .sec-3-main__right, .sec-3-main__left, .sec-4-main__right{
+            width: 100% !important;
+        }
+
+        .sec-5-item, .sec-5-end{
+            width: 260px !important;
+        }
+    }
+    .t-line-title-1{
+        max-width: 185px;
+    }
+
+    .t-line-title-2{
+        max-width: 145px;
+    }
+
+    .t-line-title-3{
+        max-width: 155px;
+    }
+
     .sec-5-end{
         width: 700px;
         margin: 0 auto;
@@ -143,7 +183,7 @@ export default{
     }
     .center-line{
         height: 3px;
-        width: 50px;
+        width: 100px;
         background-color: #00afef;
         margin: 0 auto;
     }
@@ -204,7 +244,7 @@ export default{
     }
     .t-line{
         height: 3px;
-        width: 50px;
+        width: 100%;
         background-color: #00afef;
     }
     .sec-1-banner{

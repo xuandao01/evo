@@ -5,6 +5,7 @@
                 <div class="main-content-item">
                     <div class="mitem-logo"></div>
                     <div class="mitem-content" style="margin-top: 20px">
+                        <div class="m-top-50"></div>
                         <div class="f-14">Mọi vấn đề vui lòng liên hệ:</div>
                         <div class="top-15 f-14"><span class="bold f-14">Hotline:</span> 0847 432 432 </div>
                         <div class="top-15 f-14"><span class="bold f-14">Địa chỉ:</span> Tầng 3, Tòa Dolphin Plaza, 06 Nguyễn Hoàng, Phường Mỹ Đình, Quận Nam Từ Liêm, Hà Nội </div>
@@ -16,7 +17,7 @@
                 </div>
                 <div class="main-content-item">
                     <div class="semibold color-3"> Về chúng tôi</div>
-                    <div class="footer-item top-30 f-14">Giới thiệu</div>
+                    <div class="footer-item top-30 f-14 clickable" @click="redirectTo('abouts')">Giới thiệu</div>
                     <div class="footer-item top-20 f-14">Giảng viên tiêu biểu</div>
                     <div class="footer-item top-20 f-14">Học viên tiêu biểu</div>
                     <div class="footer-item top-20 f-14">Tài liệu học tập</div>
@@ -25,18 +26,17 @@
                 </div>
                 <div class="main-content-item">
                     <div class="semibold color-3"> Chính sách & hỗ trợ</div>
-                    <div class="footer-item top-30 f-14">Chính sách & quy định</div>
-                    <div class="footer-item top-20 f-14">Chính sách bảo mật</div>
-                    <div class="footer-item top-20 f-14">Điều khoản sử dụng</div>
+                    <!-- <div class="footer-item top-30 f-14 clickable" @click="redirectTo('policies-regulations')">Chính sách & quy định</div> -->
+                    <div class="footer-item top-20 f-14 clickable" @click="redirectTo('privacy-policy')">Chính sách bảo mật</div>
+                    <div class="footer-item top-20 f-14 clickable" @click="redirectTo('terms-of-use')">Điều khoản sử dụng</div>
                 </div>
                 <div class="main-content-item">
                     <div class="semibold color-3"> Chương trình học tiêu biểu</div>
-                    <div class="footer-item top-30 f-14">Lập trình Scratch</div>
-                    <div class="footer-item top-30 f-14">Lập trình Game for Kid</div>
-                    <div class="footer-item top-30 f-14">Lập trình App for Kid</div>
-                    <div class="footer-item top-30 f-14">Lập trình Web for Kid</div>
-                    <div class="footer-item top-20 f-14">Lập trình cho sinh viên và người đi làm</div>
-                    <div class="footer-item top-20 f-14">Luyện thi tin học trẻ 1:1</div>
+                    <div class="footer-item top-30 f-14 clickable" @click="redirectTo('scratch-course')">Lập trình Scratch</div>
+                    <div class="footer-item top-30 f-14 clickable" @click="redirectTo('game-course')">Lập trình Game for Kid</div>
+                    <div class="footer-item top-30 f-14 clickable" @click="redirectTo('app-course')">Lập trình App for Kid</div>
+                    <div class="footer-item top-30 f-14 clickable" @click="redirectTo('web-course')">Lập trình Web for Kid</div>
+                    <div class="footer-item top-20 f-14 clickable" @click="redirectTo('adult-course')">Lập trình cho sinh viên và người đi làm</div>
                 </div>
             </div>
             <div class="f-copyright">© 2023 EVO Education. Đã Đăng Ký Bản Quyền</div>
@@ -70,6 +70,11 @@ export default {
                     break;
                 }
                 default: {
+                    if (index == 'scratch-course' || index == 'game-course' || index == 'app-course' || index == 'web-course') {
+                        this.$router.push('code-kid');
+                    } else {
+                        this.$router.push(index);
+                    }
                     return;
                 }
             }
@@ -79,7 +84,11 @@ export default {
 }
 </script>
 <style scoped>
-
+    @media(max-width: 480px){
+        .mitem-logo{
+            top: -150px !important;
+        }
+    }
     .pop-effect:hover{
         transform: scale(1.1);
         cursor: pointer;
@@ -159,6 +168,10 @@ export default {
         cursor: not-allowed;
     }
 
+    .clickable:hover{
+        cursor: pointer !important;
+    }
+
     .s-footer{
         height: 500px;
         background-color: #bb7d0006;
@@ -176,13 +189,20 @@ export default {
     .main-content-item{
         height: 100%;
         width: 300px;
+        position: relative;
     }
 
     .mitem-logo{
-        height: 60px;
-        background: url('@/assets/image/logo.png') no-repeat;
-        width: 70%;
+        height: 130px;
+        background: url('@/assets/image/logo_v2.png') no-repeat;
+        width: 75%;
         background-size: contain;
+        position: absolute;
+        top: -40px;
+    }
+
+    .m-top-50{
+        margin-top: 70px;
     }
     
 </style>

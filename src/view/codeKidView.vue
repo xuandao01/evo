@@ -103,6 +103,9 @@
                                 <div class="line-cr-title"></div>
                             </div>
                             <div class="rewarded-img"></div>
+                            <div class="rewarded-img rewarded-img-mobile rewarded-img-mobile-1"></div>
+                            <div class="rewarded-img rewarded-img-mobile rewarded-img-mobile-2"></div>
+                            <div class="rewarded-img rewarded-img-mobile rewarded-img-mobile-3"></div>
                         </div>
 
                         <div class="rewarded" ref="studyLine">
@@ -113,12 +116,12 @@
 
                                 <div class="sl-item" @click="courseClick('kodu')">
                                     <div class="sl-item-avt sl-kodu-img"></div>
-                                    <div class="sl-item-year semibold">Năm 0</div>
+                                    <div class="sl-item-year semibold">Năm 1</div>
                                     <div class="sl-item-title bold">Kodu Game Lab</div>
                                     <div class="sl-item-group">
                                         <div class="sl-item-age">
                                             <div class="sl-item-age-title">Độ tuổi phù hợp</div>
-                                            <div class="sl-item-age-value bold">Lớp 3-5 (8 -> 10 tuổi)</div>
+                                            <div class="sl-item-age-value bold">Lớp 3-5 (8 ➜ 10 tuổi)</div>
                                         </div>
                                         <div class="sl-item-rate">
                                             <div class="sl-item-rate-title">Độ khó</div>
@@ -134,12 +137,12 @@
 
                                 <div class="sl-item" @click="courseClick('scratch')">
                                     <div class="sl-item-avt sl-scratch-img"></div>
-                                    <div class="sl-item-year semibold">Năm 1</div>
+                                    <div class="sl-item-year semibold">Năm 2</div>
                                     <div class="sl-item-title bold">Lập trình Scatch</div>
                                     <div class="sl-item-group">
                                         <div class="sl-item-age">
                                             <div class="sl-item-age-title">Độ tuổi phù hợp</div>
-                                            <div class="sl-item-age-value bold">Lớp 3-5 (8 -> 10 tuổi)</div>
+                                            <div class="sl-item-age-value bold">Lớp 3-5 (8 ➜ 10 tuổi)</div>
                                         </div>
                                         <div class="sl-item-rate">
                                             <div class="sl-item-rate-title">Độ khó</div>
@@ -155,12 +158,12 @@
 
                                 <div class="sl-item" @click="courseClick('game')">
                                     <div class="sl-item-avt sl-game-img"></div>
-                                    <div class="sl-item-year semibold">Năm 2</div>
+                                    <div class="sl-item-year semibold">Năm 3</div>
                                     <div class="sl-item-title bold">Lập trình Game</div>
                                     <div class="sl-item-group">
                                         <div class="sl-item-age">
                                             <div class="sl-item-age-title">Độ tuổi phù hợp</div>
-                                            <div class="sl-item-age-value bold">Lớp 5-7 (10 -> 12 tuổi)</div>
+                                            <div class="sl-item-age-value bold">Lớp 5-7 (10 ➜ 12 tuổi)</div>
                                         </div>
                                         <div class="sl-item-rate">
                                             <div class="sl-item-rate-title">Độ khó</div>
@@ -176,12 +179,12 @@
 
                                 <div class="sl-item" @click="courseClick('app')">
                                     <div class="sl-item-avt sl-app-img"></div>
-                                    <div class="sl-item-year semibold">Năm 3</div>
+                                    <div class="sl-item-year semibold">Năm 4</div>
                                     <div class="sl-item-title bold">Lập trình App Mobile</div>
                                     <div class="sl-item-group">
                                         <div class="sl-item-age">
                                             <div class="sl-item-age-title">Độ tuổi phù hợp</div>
-                                            <div class="sl-item-age-value bold">Lớp 6-8 (11 -> 13 tuổi)</div>
+                                            <div class="sl-item-age-value bold">Lớp 6-8 (11 ➜ 13 tuổi)</div>
                                         </div>
                                         <div class="sl-item-rate">
                                             <div class="sl-item-rate-title">Độ khó</div>
@@ -197,12 +200,12 @@
 
                                 <div class="sl-item" @click="courseClick('web')">
                                     <div class="sl-item-avt sl-web-img"></div>
-                                    <div class="sl-item-year semibold">Năm 4</div>
+                                    <div class="sl-item-year semibold">Năm 5</div>
                                     <div class="sl-item-title bold">Lập trình Web</div>
                                     <div class="sl-item-group">
                                         <div class="sl-item-age">
                                             <div class="sl-item-age-title">Độ tuổi phù hợp</div>
-                                            <div class="sl-item-age-value bold">Lớp 8-11 (14 -> 17 tuổi)</div>
+                                            <div class="sl-item-age-value bold">Lớp 8-11 (14 ➜ 17 tuổi)</div>
                                         </div>
                                         <div class="sl-item-rate">
                                             <div class="sl-item-rate-title">Độ khó</div>
@@ -218,12 +221,12 @@
 
                                 <div class="sl-item" @click="courseClick('python')">
                                     <div class="sl-item-avt sl-python-img"></div>
-                                    <div class="sl-item-year semibold">Năm 5</div>
+                                    <div class="sl-item-year semibold">Năm 6</div>
                                     <div class="sl-item-title bold">Lập trình Python</div>
                                     <div class="sl-item-group">
                                         <div class="sl-item-age">
                                             <div class="sl-item-age-title">Độ tuổi phù hợp</div>
-                                            <div class="sl-item-age-value bold">Lớp 9-12 (15 -> 18 tuổi)</div>
+                                            <div class="sl-item-age-value bold">Lớp 9-12 (15 ➜ 18 tuổi)</div>
                                         </div>
                                         <div class="sl-item-rate">
                                             <div class="sl-item-rate-title">Độ khó</div>
@@ -306,9 +309,7 @@ export default {
     created() {
         let me = this;
         window.scrollTo({ top: 0, behavior: 'smooth' });
-        setTimeout(() => {
-            this.showLoader = false;
-        }, 1000);
+        document.title = 'Khóa học lập trình cho trẻ em tại EVO';
         window.addEventListener("scroll", () => {
             me.onScroll();
         });
@@ -573,7 +574,7 @@ export default {
                 action: 'b'
             },
             currentProgress: 0,
-            showLoader: true,
+            showLoader: false,
             submitObject: {
                 parentName: '',
                 phonenumber: '',
@@ -600,6 +601,94 @@ export default {
 </script>
 
 <style scoped>
+    @media (max-width: 480px) {
+        .submit-remind-content__right{
+            height: 130px !important;
+        }
+        .submit-remind-content{
+            flex-direction: column-reverse;
+        }
+        .submit-remind{
+            margin-left: 0 !important;
+        }
+        .student-product{
+            flex-direction: column;
+            left: 10px !important;
+            row-gap: 15px;
+        }
+        .e-main{
+            height: 7900px !important;
+        }
+        .banner-title{
+            line-height: 30px !important;
+            width: 300px !important;
+        }
+        .e-banner{
+            height: 280px !important;
+        }
+        .main-content{
+            margin-top: 30px !important;
+        }
+        .main-content .content{
+            flex-direction: column;
+            row-gap: 15px;
+        }
+        .overview{
+            width: 100% !important;
+            margin-left: 0 !important;
+        }
+        .choose-reason .cr-title, .cr-left-side{
+            margin-left: 0 !important;
+            left: 0 !important;
+        }
+        .cr-item-text {
+            position: relative;
+            left: 40px;
+            margin-left: 0 !important;
+            top: -8px;
+        }
+        .cr-title{
+            margin-left: 0 !important;
+        }
+        .rewarded-img{
+            left: 10px !important;
+            width: 205px !important;
+        }
+        .rewarded-img-mobile{
+            display: block !important;
+        }
+        .rewarded-img-mobile-1{
+            background-position: -180px !important;
+        }
+        .rewarded-img-mobile-2{
+            background-position: -415px !important;
+        }
+        .rewarded-img-mobile-3{
+            background-position: -594px !important;
+        }
+        .study-line{
+            grid-template-columns: auto !important;
+        }
+        .cr-item-content{
+            padding-top: 2px !important;
+        }
+        .overview .left-content, .overview .right-content{
+            width: 100% !important;
+        }
+        .progress-bar, .submit-form .right-side{
+            display: none !important;
+        }
+        .content, .submit-form, .form-element{
+            width: 100% !important;
+            margin-left: 0 !important;
+        }
+        .e-banner .banner-imgae{
+            height: 150px !important;
+        }
+    }
+    .rewarded-img-mobile{
+        display: none;
+    }
 
     .submit-remind-content__right{
         height: 300px;

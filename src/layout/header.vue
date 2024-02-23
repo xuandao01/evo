@@ -79,7 +79,10 @@ export default {
                         this.$router.push('course-kid');
                         break;
                     }
-                    
+                    default:{
+                        this.$router.push('adult-course');
+                        break;
+                    }
                 }
             }
         }
@@ -213,9 +216,9 @@ export default {
         background-color: #fff;
     }
     .h-logo{
-        height: 28px;
-        width: 140px;
-        background: url('@/assets/image/logo.png') no-repeat;
+        height: 125px;
+        width: 200px;
+        background: url('@/assets/image/logo_v2.png') no-repeat;
         background-size: contain;
         cursor: pointer;
     }

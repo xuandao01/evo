@@ -89,9 +89,7 @@ export default {
     },
     created(){
         this.courseData = courseRes.vi.techCourse;
-        setTimeout(() => {
-            this.showLoader = false;
-        }, 1500);
+        document.title = 'Các khóa học tại EVO';
     },
 
     mounted(){

@@ -52,6 +52,11 @@ export default {
 </script>
 
 <style scoped>
+    @media(max-width: 480px){
+        .subject-info{
+            max-height: 250px !important;
+        }
+    }
     .subject-info__item{
         line-height: 26px;
     }

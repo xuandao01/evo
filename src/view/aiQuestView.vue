@@ -81,6 +81,7 @@ export default{
     created(){
         if (sessionStorage.lang) this.lang = sessionStorage.lang;
         window.scrollTo({ top: 0, behavior: 'smooth' });
+        document.title = 'EVO AI';
     },
     mounted() {
         // this.sendRequest();

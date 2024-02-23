@@ -61,6 +61,7 @@ export default{
     name: "newsView",
     created() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
+        document.title = 'Tin tức nổi bật';
     },
     mounted() {
         AOS.init({
@@ -101,6 +102,24 @@ export default{
 </script>
 
 <style scoped>
+    @media (max-width: 480px) {
+        .event-banner{
+            height: 170px !important;
+        }
+        .event-item {
+            height: 250px !important;
+            display: flex !important;
+            flex-direction: column !important;
+            width: 245px !important;
+            row-gap: 15px;
+        }
+        .event-container{
+            width: 350px !important;
+        }
+        .event-left{
+            width: 250px !important;
+        }
+    }
     .news-2{
         background-image: url("@/assets/icons/new-2.png") !important;
         background-position: 0 0 !important;
@@ -134,7 +153,7 @@ export default{
         max-width: 350px;
         display: flex;
         flex-direction: column;
-        row-gap: 10px;
+        row-gap: 30px;
     }
     .event-left{
         height: 200px;
