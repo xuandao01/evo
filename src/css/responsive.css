@@ -5,6 +5,12 @@
     }
 }
 
+@media (max-width: 1650px) {
+    .subject-info{
+        max-height: 185px !important;
+    }
+}
+
 @media(max-width: 767px){
     
     .pc-mode{

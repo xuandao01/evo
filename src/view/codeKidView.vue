@@ -121,7 +121,7 @@
                                     <div class="sl-item-group">
                                         <div class="sl-item-age">
                                             <div class="sl-item-age-title">Độ tuổi phù hợp</div>
-                                            <div class="sl-item-age-value bold">Lớp 3-5 (8 ➜ 10 tuổi)</div>
+                                            <div class="sl-item-age-value bold">Lớp 1-2 (6 ➜ 7 tuổi)</div>
                                         </div>
                                         <div class="sl-item-rate">
                                             <div class="sl-item-rate-title">Độ khó</div>

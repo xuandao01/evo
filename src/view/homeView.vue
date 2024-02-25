@@ -602,6 +602,8 @@ export default {
         async submit(){
             if (this.vaildate()) {
                 this.isLoading = true;
+                // let flatSubject = this.subject.flat(Infinity);
+                // let subjectSelected = 
                 let api = this.homeRes.sheetAPI + `?fullname=${this.fullName}&phone_number=${this.phoneNumber}&address=${this.address}&subject=${this.subjectValue}&age=${this.age}&submited_at=${new Date()}`,
                     res = await fetch(api),
                     json = await res.json();
@@ -985,6 +987,14 @@ export default {
 
     .e-subject-tree .el-input__wrapper{
         border-radius: 10px;
+        padding: 6px;
+    }
+
+    ::v-deep .el-input__wrapper{
+        border-radius: 10px;
+        padding: 6px;
+        border: solid 1px #666 !important;
+        outline: unset;
     }
 
     .e-subject{
