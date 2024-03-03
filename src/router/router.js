@@ -1,5 +1,5 @@
 import {createRouter, createWebHistory} from 'vue-router';
-import homeView from '@/view/homeView.vue'
+// import homeView from '@/view/homeView.vue'
 import courseView from '@/view/courseView.vue'
 import codeKidView from '@/view/codeKidView.vue'
 import courseKidView from '@/view/courseKidView.vue'
@@ -12,7 +12,7 @@ import aboutsView from '@/view/aboutsView.vue'
 const routers = [
     {
         path: '/',
-        component: homeView
+        component: () => import(/* webpackChunkName: "group-user" */ '@/view/homeViewV3.vue')
     },
     {
         path: '/courses',

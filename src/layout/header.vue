@@ -137,7 +137,7 @@ export default {
         height: 100vh;
         top: 0;
         right: 0;
-        background-color: #00afef;
+        background-color: #1176bc;
         animation-name: slide;
         animation-duration: 1s;
         animation-fill-mode: forwards;
@@ -210,9 +210,9 @@ export default {
         box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 10px;
         justify-content: space-between;
         overflow: hidden;
-        z-index: 3;
+        z-index: 13;
         position: fixed;
-        width: calc(100% - 40px);
+        width: calc(100%);
         background-color: #fff;
     }
     .h-logo{
@@ -249,15 +249,16 @@ export default {
     }
 
     .ev-header .desktop-mode .h-container > .h-menu-item:hover a, .desktop-mode .router-link-exact-active {
-        color: #00afef !important;
-        border-bottom: solid 2px #00afef !important;
+        color: #1176bc !important;
+        border-bottom: solid 2px #1176bc !important;
         cursor: pointer;
     }
 
     .header-action{
         column-gap: 25px;
         display: flex;
-        align-items: center;        
+        align-items: center;    
+        display: none;    
     }
 
     .header-action > button {
@@ -271,12 +272,12 @@ export default {
 
     .header-action .h-btn1{
         background-color: transparent;
-        border: solid #00afef 1px;
-        color: #00afef;
+        border: solid #1176bc 1px;
+        color: #1176bc;
     }
 
     .header-action .h-btn2{
-        background-color: #00afef;
+        background-color: #1176bc;
         border: unset;
         color: #fff;
     }
