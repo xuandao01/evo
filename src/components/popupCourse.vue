@@ -54,7 +54,12 @@ export default {
 <style scoped>
     @media(max-width: 480px){
         .subject-info{
-            max-height: 250px !important;
+            max-height: 275px !important;
+        }
+        .course-popup{
+            width: 80% !important;
+            height: 80%;
+            top: 10% !important;
         }
     }
     .subject-info__item{

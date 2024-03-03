@@ -68,6 +68,8 @@
                     </div>
                 </div>
             </div>
+         <div class="header-distinct"></div>
+
         </div>
         <ELoader v-if="showLoader"></ELoader>
     </div>
@@ -103,8 +105,8 @@ export default {
     },
 
     methods: {
-        mouseOverStep(stepId) {
-            this.currentStep = stepId;
+        mouseOverStep() {
+            // this.currentStep = stepId;
         },
 
         autoIncreaseStep(){
@@ -115,6 +117,9 @@ export default {
 }
 </script>
 <style scoped> 
+.header-distinct{
+        height: 64px;
+    }
         /* responsive */
         @media (max-width: 768px) {
         .e-banner-1 {
@@ -162,26 +167,26 @@ export default {
 
     .other-course-item .title{
         position: absolute;
-        bottom: 10px;
+        bottom: 0px;
         left: 10px;
         font-size: 17px;
     }
 
     .other-course-item:nth-child(1) .title{
-        color: #fff;
+        color: #111;
     }
     .other-course-item:nth-child(2) .title{
         color: #111;
     }
 
     .other-course-item:nth-child(1){
-        background-image: url("@/assets/image/programming-kid.jpg");
+        background-image: url("@/assets/image/other4kid.jpeg");
         background-size: cover;
         background-position: -10px 5px;
     }
 
     .other-course-item:nth-child(2){
-        background-image: url("@/assets/image/programming-18.jpg");
+        background-image: url("@/assets/image/other4teen.jpeg");
         background-size: cover;
     }
 
@@ -209,19 +214,19 @@ export default {
     }
 
     .e-carousel-item-1{
-        background: url("@/assets/image/step-1.png");
+        background: url("@/assets/image/Trường học công nghệ .png");
         background-size: cover;
         background-position-y: -80px;
     }
 
     .e-carousel-item-2{
-        background: url("@/assets/image/step-2.jpg");
+        background: url("@/assets/image/Phát triển Mindset.png");
         background-size: cover;
         background-position-y: -30px;
     }
 
     .e-carousel-item-3{
-        background: url("@/assets/image/step-3.jpg");
+        background: url("@/assets/image/Thực tập sớm.png");
         background-size: cover;
     }
 
@@ -329,19 +334,19 @@ export default {
     }
 
     .course-kid-1 .main-image{
-        background: url("@/assets/image/scratch-basic.webp");
+        background: url("@/assets/image/Lập trình.png");
         background-size: cover;
         background-position-y: -32px;
     }
 
     .course-kid-2 .main-image{
-        background: url("@/assets/image/robotic-course.jpg");
+        background: url("@/assets/image/Robotics.png");
         background-size: cover;
         background-position-y: -15px;
     }
 
     .course-kid-3 .main-image{
-        background: url("@/assets/image/game-basic.jpg");
+        background: url("@/assets/image/Lập trình và Robotics.png");
         background-size: cover;
         background-position-y: -15px;
     }

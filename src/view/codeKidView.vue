@@ -822,39 +822,39 @@ export default {
     }
 
     .sl-scratch-img{
-        background: url("@/assets/icons/code-kid-scratch.png");
+        background: url("@/assets/icons/Scratch.png");
         background-size: cover;
-        background-color: #00a4df20;
+        /* background-color: #00a4df20; */
     }
 
     .sl-kodu-img{
-        background: url("@/assets/icons/code-kid-kodu.png");
+        background: url("@/assets/icons/Kodu Game Lab.png");
         background-size: cover;
-        background-color: #00a4df20;
+        /* background-color: #00a4df20; */
     }
 
     .sl-game-img{
-        background: url("@/assets/icons/code-kid-game.png");
+        background: url("@/assets/icons/Game.png");
         background-size: cover;
-        background-color: #00a4df20;
+        /* background-color: #00a4df20; */
     }
 
     .sl-app-img{
-        background: url("@/assets/icons/code-kid-app.png");
+        background: url("@/assets/icons/App mobile.png");
         background-size: cover;
-        background-color: #00a4df20;
+        /* background-color: #00a4df20; */
     }
 
     .sl-web-img{
-        background: url("@/assets/icons/code-kid-web.png");
+        background: url("@/assets/icons/Web.png");
         background-size: cover;
-        background-color: #00a4df20;
+        /* background-color: #00a4df20; */
     }
 
     .sl-python-img{
-        background: url("@/assets/icons/code-kid-python.png");
+        background: url("@/assets/icons/Python.png");
         background-size: cover;
-        background-color: #00a4df20;
+        /* background-color: #00a4df20; */
     }
 
     .sl-item-year{

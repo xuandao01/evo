@@ -92,27 +92,44 @@
                     <div class="sec-4-content">
                         <div class="sec-4-top">
                             <div class="inp-top">
-                                <input placeholder="Họ và tên phụ huynh">
-                                <input placeholder="Họ và tên học viên">
-                                <input placeholder="Số điện thoại">
+                                <input v-model="submitInf.parentName" placeholder="Họ và tên phụ huynh">
+                                <input v-model="submitInf.studentName" placeholder="Họ và tên học viên">
+                                <input v-model="submitInf.phonenumber" placeholder="Số điện thoại">
                             </div>
                             <div class="inp-bottom">
-                                <input placeholder="Độ tuổi của con">
-                                <input placeholder="Môn học bạn quan tâm">
+                                <input v-model="submitInf.studentAge" placeholder="Độ tuổi của con">
+                                <input v-model="submitInf.subject" placeholder="Môn học bạn quan tâm">
                             </div>
                         </div>
                         <div class="sec-4-bottom">
-                            <button class="bold">ĐĂNG KÝ TRẢI NGHIỆM</button>
+                            <button @click="submitForm" class="bold">ĐĂNG KÝ TRẢI NGHIỆM</button>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+        <div class="header-distinct"></div>
+        <el-dialog v-model="centerDialogVisible" :title="dialogTitle" width="30%" center>
+            <span>
+            {{ this.dialogMessage }}
+            </span>
+            <template #footer>
+            <span class="dialog-footer">
+                <el-button type="primary" @click="centerDialogVisible = false">
+                    Đồng ý
+                </el-button>
+            </span>
+            </template>
+        </el-dialog>
+        <loader v-show="isLoading"></loader>
     </div>
 </template>
 <script>
+import loader from '@/components/loader.vue';
+import homeRes from '@/resources/home.js'
 export default {
     name: "HomeViewV3",
+    components: {loader},
     methods: {
         redirectToCourse(course){
             switch(course) {
@@ -127,9 +144,67 @@ export default {
                 }
             }
         },
+        checkValidPhonenumber(phoneNumber) {
+            const regexPhoneNumber = /(84|0[3|5|7|8|9])+([0-9]{8})\b/g;
+            return phoneNumber.match(regexPhoneNumber) ? true : false;
+        },
+        validate(){
+            if (!this.submitInf.parentName) {
+                this.showDialogMessage('Lỗi', 'Tên phụ huynh không được để trống!')
+                return false
+            }
+            if (!this.submitInf.phonenumber) {
+                this.showDialogMessage('Lỗi', 'Số điện thoại không được để trống!')
+                return false
+            }
+            if (!this.checkValidPhonenumber(this.submitInf.phonenumber)) {
+                this.showDialogMessage('Lỗi', 'Số điện thoại không hợp lệ!')
+                return false
+            }
+            return true;
+        },
+        async submitForm(){
+            if (this.validate()){
+                this.isLoading = true;
+                // let flatSubject = this.subject.flat(Infinity);
+                // let subjectSelected = 
+                let api = this.homeRes.sheetAPI + `?fullname=${this.submitInf.parentName + (this.submitInf.studentName ? ' PHHS ' + this.submitInf.studentName : '')}&phone_number=${this.submitInf.phonenumber}&address=&subject=${this.submitInf.subject}&age=${this.submitInf.studentAge}&submited_at=${new Date()}`,
+                    res = await fetch(api),
+                    json = await res.json();
+                this.isLoading = false;
+                
+                if (json.result == 'success') {
+                    this.submitInf.parentName = '';
+                    this.submitInf.studentName = '';
+                    this.submitInf.phonenumber = '';
+                    this.submitInf.studentName = '';
+                    this.submitInf.studentAge = '';
+                    this.submitInf.subject = '';
+                } else {
+                    this.showDialogMessage('Lỗi', 'Có lỗi xảy ra vui lòng thử lại!')
+                }
+            }
+        },
+        showDialogMessage(title, message) {
+            this.dialogTitle = title;
+            this.dialogMessage = message;
+            this.centerDialogVisible = true;
+        }
     },
     data() {
         return {
+            isLoading: false,
+            homeRes: homeRes,
+            dialogMessage: '',
+            dialogTitle: '',
+            centerDialogVisible: false,
+            submitInf: {
+                parentName: '',
+                studentName: '',
+                phonenumber: '',
+                studentAge: '',
+                subject: '',
+            },
             teacherData: [
                 [
                     {
@@ -458,7 +533,9 @@ export default {
         height: 250px;
         width: 450px;
         border-radius: 10px;
-        
+        background-image: url('@/assets/image/home-banner-v2.jpg');
+        background-size: cover;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
         background-color: #fff;
     }
 

@@ -367,6 +367,7 @@
 <script>
 import homeRes from '@/resources/home.js'
 import loader from '@/components/loader.vue'
+import { ElMessage } from 'element-plus';
 import AOS from 'aos';
 import 'aos/dist/aos.css'
 
@@ -617,6 +618,11 @@ export default {
                     this.subjectValue = null;
                     this.subject = '';
                     this.age = '';
+                    ElMessage({
+                        message: 'Đăng ký thành công! Chúng tôi sẽ sớm liên hệ với bạn.',
+                        type: 'success',
+                        duration: 6000,
+                    })
                 }
             }
         },

@@ -109,11 +109,12 @@ export default {
         position: absolute;
         bottom: 10px;
         height: 40px;
-        width: 250px;
-        left: 50px;
+        width: 215px;
+        left: 20px;
         border: unset;
         outline: unset;
-        background-color: #fff;
+        color: #fff;
+        background-color: #ffc911;
         border-radius: 12px;
         cursor: pointer;
     }
@@ -133,11 +134,11 @@ export default {
     }
     .header-menu-mobile{
         position: fixed;
-        width: 350px;
+        width: 250px;
         height: 100vh;
         top: 0;
         right: 0;
-        background-color: #1176bc;
+        background-color: #fff;
         animation-name: slide;
         animation-duration: 1s;
         animation-fill-mode: forwards;
@@ -153,7 +154,7 @@ export default {
 
     .header-menu-mobile__item{
         padding: 12px;
-        height: 50px;
+        height: 30px;
         text-align: right;
         line-height: 50px;
         border-bottom: solid #fff 2px;
@@ -164,14 +165,14 @@ export default {
 
     .header-menu-mobile__item > a{
         text-decoration: none;
-        color: #fff;
+        color: #0d2786;
     }
 
     .header-btn{
         height: 50px;
         width: 50px;
         position: absolute;
-        right: 10px;
+        right: 50px;
         top: 7px;
         background: url("@/assets/icons/icons8-menu-40.png") no-repeat;
         background-size: 40px 40px;
@@ -182,7 +183,7 @@ export default {
     .close-button{
         right: unset;
         left: 10px;
-        background: url("@/assets/icons/icons8-close-40.png") no-repeat !important;
+        background: url("@/assets/icons/icons8-close-30.png") no-repeat !important;
     }
 
     .mobile-mode{
@@ -216,9 +217,9 @@ export default {
         background-color: #fff;
     }
     .h-logo{
-        height: 125px;
+        height: 60px;
         width: 200px;
-        background: url('@/assets/image/logo_v2.png') no-repeat;
+        background: url('@/assets/image/logo_v3.png') no-repeat;
         background-size: contain;
         cursor: pointer;
     }

@@ -399,10 +399,10 @@ export default {
                         this.subjectDetail.numOfLesson = '15 buổi học';
                         this.subjectDetail.numOfStudent = '4 - 6 học sinh';
                         this.subjectDetail.content = [
-                            '💻 Đào tạo trẻ em trở thành những chuyên gia robotica, đặt họ vào bối cảnh thách thức và dự án phức tạp.',
-                            '💻 Tập trung vào nâng cao kỹ năng nghiên cứu và phát triển công nghệ mới, đồng thời khuyến khích tinh thần sáng tạo và lãnh đạo.',
-                            '💻 Học sinh sẽ được thách thức với các dự án đặc biệt, từ việc giải quyết các vấn đề toàn cầu đến việc phát triển công nghệ đột phá.',
-                            '💻 Giao tiếp hiệu quả, quản lý dự án và làm việc nhóm sẽ là những kỹ năng chính để chuẩn bị họ cho sự nghiệp trong lĩnh vực công nghiệp và nghiên cứu robotica.',
+                            '💣 Tận hưởng sự thách thức và sức mạnh của công nghệ robot thông qua khóa học Đấu Trường Robotic',
+                            '💣 Khám phá các phương pháp tiên tiến trong lập trình và điều khiển robot thông minh, từ các thuật toán cơ bản đến các ứng dụng phức tạp.',
+                            '💣 Trải nghiệm sự kết hợp giữa lý thuyết và thực hành trong môi trường học tập tương tác, nơi bạn có cơ hội thử nghiệm, phát triển và hoàn thiện kỹ năng của mình .',
+                            '💣 Hãy tham gia vào cuộc phiêu lưu khoa học và công nghệ, khám phá những tiềm năng không ngừng của robotica.',
                         ]
                         this.showPopupSubject = true;
                         break;
@@ -656,6 +656,9 @@ export default {
         .e-banner .banner-imgae{
             height: 150px !important;
         }
+    }
+    .rewarded-img-mobile{
+        display: none;
     }
     .submit-remind-content__right{
         height: 300px;

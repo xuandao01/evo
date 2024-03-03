@@ -86,7 +86,7 @@ export default {
 <style scoped>
     @media(max-width: 480px){
         .mitem-logo{
-            top: -150px !important;
+            top: -90px !important;
         }
     }
     .pop-effect:hover{
@@ -194,11 +194,11 @@ export default {
 
     .mitem-logo{
         height: 130px;
-        background: url('@/assets/image/logo_v2.png') no-repeat;
+        background: url('@/assets/image/logo_v3.png') no-repeat;
         width: 75%;
         background-size: contain;
         position: absolute;
-        top: -40px;
+        top: -10px;
     }
 
     .m-top-50{
